@@ -1,0 +1,8 @@
+Theme Name: 그누스트랩
+Theme URI: 
+Maker: KILHO.NET
+Maker URI: https://kilho.net
+Version: 0.9.0
+Detail: 부트스트랩4를 그누보드 5.4 에 사용한 테마입니다.
+License: Apache License Version 2.0
+License URI: http://www.apache.org/licenses/
