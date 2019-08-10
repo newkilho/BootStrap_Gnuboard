@@ -35,3 +35,5 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 
 .corner-card{ overflow: hidden; position: relative; }
 .corner-ribbon{ width: 200px; background: #f43; position: absolute; top: 25px; left: -50px; text-align: center; line-height: 1.6em; letter-spacing: 1px; color: #f0f0f0; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
+
+.list-icon { width: 17px; height: 17px; vertical-align: text-bottom; }

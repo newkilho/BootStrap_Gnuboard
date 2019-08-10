@@ -65,7 +65,7 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 					<a href="<?php echo $list[$i]['href'] ?>"><img src="<?=$thumb['src']?>" class="card-img-top"></a>
 				</div>
 				<div class="card-body">
-					<h5 class="card-title text-truncate">
+					<div class="card-title text-truncate">
 						<?php if($is_checkbox) { ?>
 						<div class="custom-control custom-checkbox">
 							<input type="checkbox" class="custom-control-input" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
@@ -73,18 +73,16 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 						</div>
 						<?php } ?>
 						<a href="<?php echo $list[$i]['href'] ?>" class="text-dark"><?php echo $list[$i]['subject'] ?></a>
-					</h5>
+					</div>
 
-					<p class="card-text">
-						<div class="d-inline">
+					<div class="card-text d-inline">
+						<small class="text-muted">
 							<img class="list-icon rounded" src="<?=$mb_info['img']?>"> 
 							<div class="dropdown d-inline">
 								<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($list[$i]['wr_name']); ?></a>
 								<?=$mb_info['menu']?>
 							</div>					
-						</div>
-					</p>
-					<p class="card-text">
+						</small>
 						<small class="text-muted">
 							<i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?>
 						</small>
@@ -92,7 +90,7 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 							<i class="fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?>
 							<i class="pl-2 fas fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?>
 						</small>
-					</p>
+					</div>
 				</div>
 			</div>
 		</div>
