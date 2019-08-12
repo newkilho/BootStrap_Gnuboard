@@ -31,12 +31,12 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 			<a name="c_<?php echo $comment_id ?>"></a>
 		</div>
 		<div class="media">
-			<img class="comm-icon rounded" src="<?=$mb_info['img']?>">
+			<img class="comm-icon rounded" src="<?php echo $mb_info['img'] ?>">
 			<div class="media-body ml-2 ml-lg-3">
 				<div>
 					<div class="dropdown">
 						<a href="#" class="text-dark font-weight-bold" data-toggle="dropdown"><?php echo get_text($list[$i]['wr_name']); ?></a>
-						<?=$mb_info['menu']?>
+						<?php echo $mb_info['menu'] ?>
 					</div>
 				</div>
 	            <div class="mb-2">

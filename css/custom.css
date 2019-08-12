@@ -28,34 +28,7 @@ select { font-size: 14px; }
 #latest li a { color: #777; }
 
 .dropdown-item { font-size: 14px; }
-.custom-checkbox { display: inline; }
-.custom-file-label:lang(ko)::after { content: "찾아보기"; }
 
-.md-full { width: 100vw; position: relative; /* margin-top: -36px; */ margin-left: -50vw; left: 50%; }
-.grayscale { filter: gray; filter: grayscale(1); -webkit-filter: grayscale(1); }
-
-.list-icon { width: 20px; height: 20px; vertical-align: text-bottom; }
-.view-icon { width: 48px; height: 48px; }
-.comm-icon { width: 48px; height: 48px; }
-
+/*
 .title { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 100%; }
-
-@media (max-width: 575px)
-{
-	#captcha_audio {display:none !important;}
-
-	.xs-100 { width: 100%; }
-	.xs-full {
-		width: 100vw;
-		position: relative;
-		/* margin-top: -36px; */
-		margin-left: -50vw;
-		left: 50%;
-	}
-	.xs-full td	{ padding: 8px 18px; }
-
-	.list-icon { width: 18px; height: 18px; vertical-align: text-top; }
-	.comm-icon { width: 24px; height: 24px; }
-
-	.page-content {	padding: 0 18px; }
-}
+*/

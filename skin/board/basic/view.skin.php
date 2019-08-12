@@ -9,29 +9,29 @@ $mb_info = get_member_info($view['mb_id'], $view['wr_name'], $view['wr_email'], 
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 
-<? if($g5['ads']) { ?>
-<div class="mb-4"><?=$g5['ads']?></div>
-<? } ?>
+<?php if($g5['ads']) { ?>
+<div class="mb-4"><?php echo $g5['ads'] ?></div>
+<?php } ?>
 
 <div class="mb-4">
 
 	<blockquote><h3><?php echo cut_str(get_text($view['wr_subject']), 70); ?></h3></blockquote>
 
 	<div class="media mb-4">
-		<img class="view-icon rounded" src="<?=$mb_info['img']?>">
+		<img class="view-icon rounded" src="<?php echo $mb_info['img'] ?>">
 		<div class="media-body ml-3">
 			<div>
 				<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($view['wr_name']); ?></a>
 				<?php if ($is_ip_view) { ?>
 				<small class="text-muted">(<?php echo $ip ?>)</small>
 				<?php } ?>
-				<?=$mb_info['menu']?>
+				<?php echo $mb_info['menu'] ?>
 			</div>
 			<div>
 				<ul class="list-inline text-muted m-0">
-					<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?=number_format($view['wr_comment'])?> 건</li>
-					<li class="list-inline-item"><i class="fas fa-eye"></i> <?=number_format($view['wr_hit'])?> 회</li>
-					<li class="list-inline-item"><i class="fas fa-clock"></i> <?=date("Y-m-d H:i", strtotime($view['wr_datetime']))?></li>
+					<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?php echo number_format($view['wr_comment']) ?> 건</li>
+					<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($view['wr_hit']) ?> 회</li>
+					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo date("Y-m-d H:i", strtotime($view['wr_datetime'])) ?></li>
 				</ul>
 			</div>
 		</div>
@@ -192,9 +192,9 @@ $mb_info = get_member_info($view['mb_id'], $view['wr_name'], $view['wr_email'], 
 	</div>
 	<?php } ?>
 
-	<? if($g5['ads']) { ?>
-	<div class="mb-4"><?=$g5['ads']?></div>
-	<? } ?>
+	<?php if($g5['ads']) { ?>
+	<div class="mb-4"><?php echo $g5['ads'] ?></div>
+	<?php } ?>
 
 	<?php
 	// 코멘트 입출력

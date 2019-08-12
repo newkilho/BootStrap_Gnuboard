@@ -4,9 +4,9 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 0);
 ?>
 
-<? if($g5['ads']) { ?>
-<div class="mb-4"><?=$g5['ads']?></div>
-<? } ?>
+<?php if($g5['ads']) { ?>
+<div class="mb-4"><?php echo $g5['ads'] ?></div>
+<?php } ?>
 
 <div class="mb-4">
 

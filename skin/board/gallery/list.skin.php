@@ -6,9 +6,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, get_pretty_url($bo_table, '', $qstr.'&amp;page='));
 ?>
 
-<? if($g5['ads']&&!$wr_id) { ?>
-<div class="mb-4"><?=$g5['ads']?></div>
-<? } ?>
+<?php if($g5['ads']&&!$wr_id) { ?>
+<div class="mb-4"><?php echo $g5['ads'] ?></div>
+<?php } ?>
 
 <div>
 
@@ -56,18 +56,18 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 			$mb_info = get_member_info($list[$i]['mb_id'], $list[$i]['wr_name'], $list[$i]['wr_email'], $list[$i]['wr_homepage']); 
 			$thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], 320, 240, false, true);
 	?>
-		<div class="col-sm-6 col-lg-4 mb-3">
+		<div class="col-md-6 col-lg-4 mb-3">
 			<div class="card">
 				<div class="corner-card">
 					<?php if($list[$i]['icon_new']) { ?>
 					<div class="corner-ribbon shadow">NEW</div>
-					<? } ?>
-					<a href="<?php echo $list[$i]['href'] ?>"><img src="<?=$thumb['src']?>" class="card-img-top"></a>
+					<?php } ?>
+					<a href="<?php echo $list[$i]['href'] ?>"><img src="<?php echo $thumb['src'] ?>" class="card-img-top"></a>
 				</div>
 				<div class="card-body">
 					<div class="card-title text-truncate">
 						<?php if($is_checkbox) { ?>
-						<div class="custom-control custom-checkbox">
+						<div class="custom-control custom-checkbox d-inline">
 							<input type="checkbox" class="custom-control-input" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
 							<label class="custom-control-label custom-checkbox" for="chk_wr_id_<?php echo $i ?>"></label>
 						</div>
@@ -77,24 +77,22 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 
 					<div class="card-text d-inline">
 						<small class="text-muted">
-							<img class="list-icon rounded" src="<?=$mb_info['img']?>"> 
+							<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>"> 
 							<div class="dropdown d-inline">
 								<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($list[$i]['wr_name']); ?></a>
-								<?=$mb_info['menu']?>
+								<?php echo $mb_info['menu'] ?>
 							</div>					
 						</small>
-						<small class="text-muted">
-							<i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?>
-						</small>
 						<small class="text-muted float-right">
-							<i class="fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?>
+							<i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?>
+							<i class="pl-2 fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?>
 							<i class="pl-2 fas fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?>
 						</small>
 					</div>
 				</div>
 			</div>
 		</div>
-	<? } ?>
+	<?php } ?>
 	</div>
 
 	<div class="d-flex justify-content-center justify-content-sm-end">
@@ -109,9 +107,9 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 				<button type="submit" name="btn_submit" value="선택복사" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-file"></i> 복사</button>
 				<button type="submit" name="btn_submit" value="선택이동" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-arrows-alt"></i> 이동</button>
 
-				<? if($admin_href) { ?>
-				<a href="<? echo $admin_href ?>" class="btn btn-danger"><i class="fas fa-user-circle" aria-hidden="true"></i> 관리자</a>
-				<? } ?>
+				<?php if($admin_href) { ?>
+				<a href="<?php echo $admin_href ?>" class="btn btn-danger"><i class="fas fa-user-circle" aria-hidden="true"></i> 관리자</a>
+				<?php } ?>
 			</div>
 			<?php } ?>
 		</div>

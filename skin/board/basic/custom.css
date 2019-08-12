@@ -30,5 +30,31 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 #bo_v_img a.view_image{display:block}
 #bo_v_img img {margin-bottom:20px;max-width:100%;height:auto}
 
+/* 커스텀 */
 .anchor { position: relative } 
 .anchor a { position: absolute; top: -60px }
+
+.custom-checkbox { display: inline; }
+.custom-file-label:lang(ko)::after { content: "찾아보기"; }
+
+.list-icon { width: 20px; height: 20px; vertical-align: text-bottom; }
+.view-icon { width: 48px; height: 48px; }
+.comm-icon { width: 48px; height: 48px; }
+
+@media (max-width: 575px)
+{
+	#captcha_audio {display:none !important;}
+
+	.xs-100 { width: 100%; }
+	.xs-full {
+		width: 100vw;
+		position: relative;
+		/* margin-top: -36px; */
+		margin-left: -50vw;
+		left: 50%;
+	}
+	.xs-full td	{ padding: 8px 18px; }
+
+	.list-icon { width: 18px; height: 18px; vertical-align: text-top; }
+	.comm-icon { width: 24px; height: 24px; }
+}

@@ -13,9 +13,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, get_pretty_url($bo_table, '', $qstr.'&amp;page='));
 ?>
 
-<? if($g5['ads']&&!$wr_id) { ?>
-<div class="mb-4"><?=$g5['ads']?></div>
-<? } ?>
+<?php if($g5['ads']&&!$wr_id) { ?>
+<div class="mb-4"><?php echo $g5['ads'] ?></div>
+<?php } ?>
 
 <div class="mb-4">
 
@@ -128,7 +128,7 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 					<!-- 모바일 -->
 					<ul class="list-inline small text-muted mt-1 mb-0 d-md-none">
 						<li class="list-inline-item">
-							<img class="list-icon rounded" style="width:19px; height:19px;" src="<?=$mb_info['img']?>">
+							<img class="list-icon rounded" style="width:19px; height:19px;" src="<?php echo $mb_info['img'] ?>">
 							<?php echo get_text($list[$i]['wr_name']); // php echo $view['name']?>
 						</li>
 						<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?></li>
@@ -137,10 +137,10 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 					</ul>
 				</td>
 				<td class="d-none d-md-table-cell">
-					<img class="list-icon rounded" src="<?=$mb_info['img']?>"> 
+					<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>"> 
 					<div class="dropdown d-inline">
 						<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($list[$i]['wr_name']); ?></a>
-						<?=$mb_info['menu']?>
+						<?php echo $mb_info['menu'] ?>
 					</div>
 				</td>
 				<td class="d-none d-md-table-cell"><?php echo number_format($list[$i]['wr_hit']) ?></td>
@@ -170,9 +170,9 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 				<button type="submit" name="btn_submit" value="선택복사" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-file"></i> 복사</button>
 				<button type="submit" name="btn_submit" value="선택이동" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-arrows-alt"></i> 이동</button>
 
-				<? if($admin_href) { ?>
-				<a href="<? echo $admin_href ?>" class="btn btn-danger"><i class="fa fa-user-circle" aria-hidden="true"></i> 관리자</a>
-				<? } ?>
+				<?php if($admin_href) { ?>
+				<a href="<?php echo $admin_href ?>" class="btn btn-danger"><i class="fa fa-user-circle" aria-hidden="true"></i> 관리자</a>
+				<?php } ?>
 			</div>
 			<?php } ?>
 		</div>
