@@ -1,4 +1,4 @@
-Theme Name: 부트스트랩
+Theme Name: 그누스트랩
 Theme URI: 
 Maker: KILHO.NET
 Maker URI: https://kilho.net

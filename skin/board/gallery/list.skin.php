@@ -3,7 +3,7 @@ if(!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 0);
 
-$write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, get_pretty_url($bo_table, '', $qstr.'&amp;page='));
+$write_pages = chg_paging($write_pages);
 ?>
 
 <?php if($g5['ads']&&!$wr_id) { ?>

@@ -10,14 +10,14 @@ if($is_nogood) $colspan++;
 
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 0);
 
-$write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, get_pretty_url($bo_table, '', $qstr.'&amp;page='));
+$write_pages = chg_paging($write_pages);
 ?>
 
 <?php if($g5['ads']&&!$wr_id) { ?>
 <div class="mb-4"><?php echo $g5['ads'] ?></div>
 <?php } ?>
 
-<div class="mb-4">
+<div class="">
 
 	<blockquote><h3><?php echo $board['bo_subject'] ?></h3></blockquote>
 
@@ -56,7 +56,7 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 	<input type="hidden" name="page" value="<?php echo $page ?>">
 	<input type="hidden" name="sw" value="">
 
-	<table class="table xs-full mb-3"> <!-- table-striped table-hover  -->
+	<table class="table xs-full mb-0"> <!-- table-striped table-hover  -->
 		<thead>
 			<tr class="d-none d-md-table-row">
 				<?php if($is_checkbox) { ?>
@@ -153,7 +153,7 @@ $write_pages = get_paging_k(is_mobile() ? $config['cf_mobile_pages'] : $config['
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="<?php echo $colspan; ?>" class="px-0">
+				<td colspan="<?php echo $colspan; ?>" class="px-0 pb-0">
 					<div class="d-flex justify-content-center justify-content-sm-end">
 						<?php echo $write_pages;  ?>
 					</div>

@@ -140,39 +140,34 @@ function get_member_info($mb_id, $name='', $email='', $homepage='')
     return array('ico'=>$mb_ico_url, 'img'=>$mb_img_url, 'menu'=>$menu);
 }
 
-function get_paging_k($write_pages, $cur_page, $total_page, $url, $add="")
+function chg_paging($write_pages)
 {
-    $url = preg_replace('#&amp;page=[0-9]*#', '', $url) . '&amp;page=';
+	$remove = array();
+	$remove[] = '<span class="sound_only">페이지';
+	$remove[] = '<span class="pg">';
+	$remove[] = '</span>';
+	$remove[] = ' pg_start';
+	$remove[] = ' pg_end';
+	$remove[] = ' pg_next';
+	$remove[] = ' pg_prev';
 
-    $str = '';
-    //if ($cur_page > 1)
-	//	$str .= '<li class="page-item"><a class="page-link" href="'.$url.'1'.$add.'"><i class="fas fa-fast-backward"></i></a></li>';
+	$write_pages = str_replace('<nav class="pg_wrap">', '<nav><ul class="pagination">', $write_pages);
+	$write_pages = str_replace('</nav>', '</ul></nav>', $write_pages);
+	$write_pages = str_replace($remove, '', $write_pages);
+	$write_pages = str_replace('pg_page', 'page-link', $write_pages);
 
-    $start_page = ( ( (int)( ($cur_page - 1 ) / $write_pages ) ) * $write_pages ) + 1;
-    $end_page = $start_page + $write_pages - 1;
+	$write_pages = str_replace('<a href="', '<li class="page-item"><a href="', $write_pages);
+	$write_pages = str_replace('</a>', '</a></li>', $write_pages);
 
-    if ($end_page >= $total_page) $end_page = $total_page;
+	$write_pages = str_replace('<span class="sound_only">열린<strong class="pg_current">', '<li class="page-item active"><a href="#" class="page-link">', $write_pages);
+	$write_pages = str_replace('</strong>', '</a></li>', $write_pages);
 
-    if ($start_page > 1)
-		$str .= '<li class="page-item"><a href="'.$url.($start_page-1).$add.'" class="page-link"><i class="fas fa-backward"></i></a></li>';
 
-    if ($total_page > 1) {
-        for ($k=$start_page;$k<=$end_page;$k++) {
-            if ($cur_page != $k)
-                $str .= '<li class="page-item"><a href="'.$url.$k.$add.'" class="page-link">'.$k.'</a></li>';
-            else
-                $str .= '<li class="page-item active"><a href="#" class="page-link">'.$k.'</a></li>';
-        }
-    }
+	$write_pages = str_replace('처음', '<i class="fas fa-angle-double-left"></i>', $write_pages);
+	$write_pages = str_replace('이전', '<i class="fas fa-angle-left"></i>', $write_pages);
+	$write_pages = str_replace('다음', '<i class="fas fa-angle-right"></i>', $write_pages);
+	$write_pages = str_replace('맨끝', '<i class="fas fa-angle-double-right"></i>', $write_pages);
 
-    if ($total_page > $end_page) $str .= '<li class="page-item"><a href="'.$url.($end_page+1).$add.'" class="page-link"><i class="fas fa-forward"></i></a></li>';
-
-    //if ($cur_page < $total_page)
-	//	$str .= '<li class="page-item"><a href="'.$url.$total_page.$add.'" class="page-link"><i class="fas fa-fast-forward"></i></a></li>';
-
-    if ($str)
-        return '<nav><ul class="pagination">'.$str.'</ul></nav>';
-    else
-        return '';
+	return $write_pages;
 }
 ?>
