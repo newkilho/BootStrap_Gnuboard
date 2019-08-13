@@ -14,7 +14,9 @@ if(is_file(G5_PATH.'/main.php'))
 	include G5_PATH.'/main.php';
 }else{
 ?>
-Index
+
+<p>Hello Word.</p>
+
 <?php
 }
 
