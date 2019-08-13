@@ -153,7 +153,7 @@ $write_pages = chg_paging($write_pages);
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="<?php echo $colspan; ?>" class="px-0 pb-0">
+				<td colspan="<?php echo $colspan; ?>" class="px-0 pt-3 pb-0">
 					<div class="d-flex justify-content-center justify-content-sm-end">
 						<?php echo $write_pages;  ?>
 					</div>

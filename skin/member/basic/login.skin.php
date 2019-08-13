@@ -1,15 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-// add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-//add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
-
-//add_stylesheet('<link rel="stylesheet" href="'.G5_THEME_URL.'/vendor/bootstrap/css/bootstrap.min.css">');
-//add_stylesheet('<link rel="stylesheet" href="'.G5_THEME_URL.'/vendor/fontawesome-free/css/all.min.css">');
-//add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/custom.css">');
-//add_javascript('<script src="'.G5_THEME_URL.'/vendor/bootstrap/js/bootstrap.min.js"></script>');
-
-add_stylesheet('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">');
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/custom.css">');
 ?>
 

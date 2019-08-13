@@ -1,10 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-// add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-//add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
-
-add_stylesheet('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">');
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/custom.css">');
 ?>
 

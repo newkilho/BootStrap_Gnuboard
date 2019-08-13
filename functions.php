@@ -170,4 +170,15 @@ function chg_paging($write_pages)
 
 	return $write_pages;
 }
+
+function chg_board_list($str_board_list)
+{
+	$str_board_list = str_replace('<li>', '<li class="list-inline-item">', $str_board_list);
+	$str_board_list = str_replace('<strong>', '', $str_board_list);
+	$str_board_list = str_replace('</strong><span class="cnt_cmt">', ' <span class="badge badge-light">', $str_board_list);
+	$str_board_list = str_replace(' class=sch_on>', ' class="btn btn-primary active">', $str_board_list);
+	$str_board_list = str_replace(' >', ' class="btn btn-primary">', $str_board_list);
+
+	return $str_board_list;
+}
 ?>
