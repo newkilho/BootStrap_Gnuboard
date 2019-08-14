@@ -11,7 +11,7 @@ $write_pages = chg_paging($write_pages);
 <form name="fsearch" onsubmit="return fsearch_submit(this);" method="get">
 <input type="hidden" name="srows" value="<?php echo $srows ?>">
 
-<div class="card">
+<div class="card mb-3">
 	<div class="card-body px-md-5 bg-light">
 		<div class="row">
 			<div class="col-6 col-md-2 pr-1 px-md-1 mb-2 mb-md-0">
@@ -79,64 +79,62 @@ function fsearch_submit(f)
 </script>
 </form>
 
-<div class="py-2">
-	<?php if ($stx) { if ($board_count) { ?>
-	<?php
-		$str_board_list = chg_board_list($str_board_list);
-	?>
-	<ul class="list-inline">
-		<li class="list-inline-item">
-			<a href="?<?php echo $search_query ?>&amp;gr_id=<?php echo $gr_id ?>" class="btn btn-primary <?php if(strpos($str_board_list, ' active"')===false) echo 'active' ?>">전체게시판 <?php if(strpos($str_board_list, ' active"')===false) { ?><span class="badge badge-light"><?php echo number_format($total_count) ?></span><?php } ?></a>
-		</li>
-		<?php echo $str_board_list ?>
-	</ul>
-	<?php } else { ?>
-	검색된 자료가 없습니다.
-	<?php } }  ?>
+<div class="pt-3">
+	<div class="row">
+		<div class="col">
+			<h2 class="font-weight-normal mb-4"><strong class="font-weight-extra-bold">&quot;<?php echo $stx ?>&quot;</strong> 검색 결과</h2>
+
+			<?php if ($stx) { if ($board_count) { ?>
+			<?php
+				$str_board_list = chg_board_list($str_board_list);
+			?>
+			<ul class="list-inline">
+				<li class="list-inline-item">
+					<a href="?<?php echo $search_query ?>&amp;gr_id=<?php echo $gr_id ?>" class="btn btn-primary btn-sm <?php if(strpos($str_board_list, ' active"')===false) echo 'active' ?>">전체게시판 <?php if(strpos($str_board_list, ' active"')===false) { ?><span class="badge badge-light"><?php echo number_format($total_count) ?></span><?php } ?></a>
+				</li>
+				<?php echo $str_board_list ?>
+			</ul>
+		    <hr class="mb-0">
+			<?php } else { ?>
+			검색된 자료가 없습니다.
+			<?php } }  ?>
+		</div>
+	</div>
 </div>
 
-<div id="sch_result">
-
-    <hr>
-
-    <?php if ($stx && $board_count) { ?><section class="sch_res_list"><?php }  ?>
-    <?php
-    $k=0;
-    for ($idx=$table_index, $k=0; $idx<count($search_table) && $k<$rows; $idx++) {
-     ?>
-        <h2><a href="<?php echo get_pretty_url($search_table[$idx], '', $search_query); ?>"><?php echo $bo_subject[$idx] ?> 게시판 내 결과</a></h2>
-        <ul>
+<div>
+	<?php if ($stx && $board_count) { ?>
+	<ul class="list-group list-group-flush">
+	<?php }  ?>
+	<?php for ($idx=$table_index, $k=0; $idx<count($search_table) && $k<$rows; $idx++) { ?>
         <?php
         for ($i=0; $i<count($list[$idx]) && $k<$rows; $i++, $k++) {
             if ($list[$idx][$i]['wr_is_comment'])
             {
-                $comment_def = '<span class="cmt_def"><i class="fa fa-commenting-o" aria-hidden="true"></i><span class="sound_only">댓글</span></span> ';
+                $comment_def = '<i class="far fa-comment-dots"></i> ';
                 $comment_href = '#c_'.$list[$idx][$i]['wr_id'];
             }
             else
             {
-                $comment_def = '';
+                $comment_def = ' ';
                 $comment_href = '';
             }
          ?>
 
-            <li>
-                <div class="sch_tit">
-                    <a href="<?php echo $list[$idx][$i]['href'] ?><?php echo $comment_href ?>" class="sch_res_title"><?php echo $comment_def ?><?php echo $list[$idx][$i]['subject'] ?></a>
-                    <a href="<?php echo $list[$idx][$i]['href'] ?><?php echo $comment_href ?>" target="_blank" class="pop_a"><i class="fa fa-window-restore" aria-hidden="true"></i><span class="sound_only">새창</span></a>
-                </div>
-                <p><?php echo $list[$idx][$i]['content'] ?></p>
-                <div class="sch_info">
-                    <?php echo $list[$idx][$i]['name'] ?>
-                    <span class="sch_datetime"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $list[$idx][$i]['wr_datetime'] ?></span>
-                </div>
-            </li>
-        <?php }  ?>
-        </ul>
-    <?php }  ?>
-    <?php if ($stx && $board_count) {  ?></section><?php }  ?>
+		<li class="list-group-item px-0">
+			<h5><a href="<?php echo $list[$idx][$i]['href'] ?><?php echo $comment_href ?>"><?php echo $comment_def ?><?php echo $list[$idx][$i]['subject'] ?></a></h5>
+			<!-- <span class="text-dark text-uppercase font-weight-bold"><?php echo $bo_subject[$idx] ?></span> -->
+			<!-- <a href="#" class="btn btn-outline-primary btn-sm">자유게시판</a> -->
+			<span class="text-muted"><?php echo $list[$idx][$i]['wr_datetime'] ?> - <?php echo $list[$idx][$i]['content'] ?></span>
+			<?php echo $list[$idx][$i]['mb_name'] ?>
+			<?php echo get_member_info($list[$idx][$i]['wr_id'])['menu'] ?>
+		</li>
+		<?php } ?>
+	<?php }  ?>
+	<?php if ($stx && $board_count) {  ?></ul><?php }  ?>
 
-    <?php echo $write_pages ?>
-
+	<div class="pt-3 d-flex justify-content-center justify-content-sm-end">
+		<?php echo $write_pages ?>
+	</div>
 </div>
 <!-- } 전체검색 끝 -->
