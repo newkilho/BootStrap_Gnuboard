@@ -128,7 +128,7 @@ $write_pages = chg_paging($write_pages);
 					<!-- 모바일 -->
 					<ul class="list-inline small text-muted mt-1 mb-0 d-md-none">
 						<li class="list-inline-item">
-							<img class="list-icon rounded" style="width:19px; height:19px;" src="<?php echo $mb_info['img'] ?>">
+							<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>">
 							<?php echo get_text($list[$i]['wr_name']); // php echo $view['name']?>
 						</li>
 						<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?></li>

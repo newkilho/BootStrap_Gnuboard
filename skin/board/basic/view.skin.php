@@ -21,17 +21,21 @@ $mb_info = get_member_info($view['mb_id'], $view['wr_name'], $view['wr_email'], 
 		<img class="view-icon rounded" src="<?php echo $mb_info['img'] ?>">
 		<div class="media-body ml-3">
 			<div>
-				<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($view['wr_name']); ?></a>
-				<?php if ($is_ip_view) { ?>
-				<small class="text-muted">(<?php echo $ip ?>)</small>
-				<?php } ?>
-				<?php echo $mb_info['menu'] ?>
+				<ul class="list-inline text-muted m-0">
+					<li class="list-inline-item">
+						<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($view['wr_name']); ?></a>
+						<?php if ($is_ip_view) { ?>
+						<small class="text-muted">(<?php echo $ip ?>)</small>
+						<?php } ?>
+						<?php echo $mb_info['menu'] ?>
+					</li>
+				</ul>
 			</div>
 			<div>
-				<ul class="list-inline text-muted m-0">
+				<ul class="list-inline text-muted small pt-1 m-0">
 					<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?php echo number_format($view['wr_comment']) ?> 건</li>
 					<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($view['wr_hit']) ?> 회</li>
-					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo date("Y-m-d H:i", strtotime($view['wr_datetime'])) ?></li>
+					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo $view['datetime2'] ?></li>
 				</ul>
 			</div>
 		</div>

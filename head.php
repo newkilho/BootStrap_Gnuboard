@@ -47,32 +47,32 @@ get_active_menu($menu_datas);
 
 $g5['sidebar'] = false;
 ?>
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-		<a class="navbar-brand" href="<?=G5_URL?>">
-			<img height="48" src="<?php echo G5_URL ?>/logo.png">
-		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<a class="navbar-brand" href="<?=G5_URL?>">
+		<img height="48" src="<?php echo G5_URL ?>/logo.png">
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-				<?=get_layout_menu($menu_datas)?>
-				<? echo outlogin('theme/basic'); ?>
-			</ul>
-			<form class="form-inline my-2 my-lg-0 d-none d-md-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
-				<input type="hidden" name="sfl" value="wr_subject||wr_content">
-				<input type="hidden" name="sop" value="and">
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<ul class="navbar-nav mr-auto">
+			<?php echo get_layout_menu($menu_datas) ?>
+			<?php echo outlogin('theme/basic') ?>
+		</ul>
+		<form class="form-inline my-2 my-lg-0 d-none d-md-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
+			<input type="hidden" name="sfl" value="wr_subject||wr_content">
+			<input type="hidden" name="sop" value="and">
 
-				<input class="form-control mr-sm-2" name="stx" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-			</form>
-		</div>
-	</nav>
+			<input class="form-control mr-sm-2" name="stx" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</div>
+</nav>
 
-	<main role="main" class="container">
+<main role="main" class="container">
 
-		<? if($g5['sidebar']) { ?>
-			<div class="row">
-				<div class="col-lg-9">
-		<? } ?>
+	<?php if($g5['sidebar']) { ?>
+		<div class="row">
+			<div class="col-lg-9">
+	<?php } ?>

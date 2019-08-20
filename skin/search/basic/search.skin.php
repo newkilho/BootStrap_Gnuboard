@@ -91,8 +91,7 @@ function fsearch_submit(f)
 			<ul class="list-inline">
 				<li class="list-inline-item">
 					<a href="?<?php echo $search_query ?>&amp;gr_id=<?php echo $gr_id ?>" class="btn btn-primary btn-sm <?php if(strpos($str_board_list, ' active"')===false) echo 'active' ?>">전체게시판 <?php if(strpos($str_board_list, ' active"')===false) { ?><span class="badge badge-light"><?php echo number_format($total_count) ?></span><?php } ?></a>
-				</li>
-				<?php echo $str_board_list ?>
+				</li><?php echo $str_board_list ?>
 			</ul>
 		    <hr class="mb-0">
 			<?php } else { ?>

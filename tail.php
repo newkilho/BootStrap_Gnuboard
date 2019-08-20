@@ -13,45 +13,41 @@ if(in_array(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)), array('/bbs/re
 }
 
 ?>
-					<? if($g5['sidebar']) { ?>
-					</div>
-
-					<div class="col-lg-3 mt-4 mt-lg-0">
-						<? include G5_PATH.'/main.sidebar.php'; ?>
-					</div>
-					<? } ?>
-				</div>
-
-			</div>
-
+		<?php if($g5['sidebar']) { ?>
 		</div>
 
-		<footer id="footer">
-			<div class="footer-copyright">
-				<div class="container py-2">
-					<div class="row py-4">
-						<div class="col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
-							<a href="index.html" class="logo pr-0 pr-lg-3">
-								<img src="<?php echo G5_URL ?>/logo.png" height="33">
-							</a>
-						</div>
-						<div class="col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-							<p>© Copyright 2019. All Rights Reserved.</p>
-						</div>
-						<div class="col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-end">
-							<nav id="sub-menu">
-								<ul class="list-unstyled list-inline">
-									<li class="list-inline-item"><a href="<?php echo get_pretty_url('content', 'company'); ?>"> 회사소개</a></li>
-									<li class="list-inline-item"><a href="<?php echo get_pretty_url('content', 'privacy'); ?>"> 개인정보</a></li>
-									<li class="list-inline-item"><a href="<?php echo get_pretty_url('content', 'provision'); ?>"> 이용약관</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
+		<div class="col-lg-3 mt-4 mt-lg-0">
+			<?php include G5_PATH.'/sidebar.php'; ?>
+		</div>
+		<? } ?>
+
+</main>
+
+<footer id="footer">
+	<div class="footer-copyright">
+		<div class="container py-2">
+			<div class="row py-4">
+				<div class="col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
+					<a href="index.html" class="logo pr-0 pr-lg-3">
+						<img src="<?php echo G5_URL ?>/logo.png" height="33">
+					</a>
+				</div>
+				<div class="col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
+					<p>© Copyright 2019. All Rights Reserved.</p>
+				</div>
+				<div class="col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-end">
+					<nav id="sub-menu">
+						<ul class="list-unstyled list-inline">
+							<li class="list-inline-item"><a href="<?php echo get_pretty_url('content', 'company'); ?>"> 회사소개</a></li>
+							<li class="list-inline-item"><a href="<?php echo get_pretty_url('content', 'privacy'); ?>"> 개인정보</a></li>
+							<li class="list-inline-item"><a href="<?php echo get_pretty_url('content', 'provision'); ?>"> 이용약관</a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
-		</footer>
+		</div>
 	</div>
+</footer>
 
 <?php
 if ($config['cf_analytics']) {
