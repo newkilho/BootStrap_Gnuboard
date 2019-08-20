@@ -5,6 +5,7 @@ include_once(G5_LIB_PATH.'/thumbnail.lib.php');
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 0);
 
 $mb_info = get_member_info($view['mb_id'], $view['wr_name'], $view['wr_email'], $view['wr_homepage']);
+$view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($view['wr_datetime'], 11, 8) : substr($view['wr_datetime'], 2, 8);
 ?>
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
@@ -33,9 +34,9 @@ $mb_info = get_member_info($view['mb_id'], $view['wr_name'], $view['wr_email'], 
 			</div>
 			<div>
 				<ul class="list-inline text-muted small pt-1 m-0">
-					<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?php echo number_format($view['wr_comment']) ?> 건</li>
+					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo $view['datetime'] ?></li>
 					<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($view['wr_hit']) ?> 회</li>
-					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo $view['datetime2'] ?></li>
+					<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?php echo number_format($view['wr_comment']) ?> 건</li>
 				</ul>
 			</div>
 		</div>
