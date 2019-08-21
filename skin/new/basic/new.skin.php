@@ -77,7 +77,6 @@ document.getElementById("view").value = "<?php echo $view ?>";
 			<th class="d-none d-md-table-cell" style="width: 8em;">그룹</th>
 			<th class="d-none d-md-table-cell" style="width: 8em;">게시판</th>
 			<th>제목</th>
-			<th class="d-none d-md-table-cell" style="width: 11em;">글쓴이</th>
 			<th class="d-none d-md-table-cell" style="width: 6em;">날짜</th>
 		</tr>
 	</thead>
@@ -89,8 +88,6 @@ document.getElementById("view").value = "<?php echo $view ?>";
 			$gr_subject = cut_str($list[$i]['gr_subject'], 20);
 			$bo_subject = cut_str($list[$i]['bo_subject'], 20);
 			$wr_subject = get_text(cut_str($list[$i]['wr_subject'], 80));
-
-			$mb_info = get_member_info($list[$i]['mb_id'], $list[$i]['wr_name'], $list[$i]['wr_email'], $list[$i]['wr_homepage']);
 		?>
 		<tr>
 			<?php if ($is_admin) { ?>
@@ -112,13 +109,6 @@ document.getElementById("view").value = "<?php echo $view ?>";
 					<li class="list-inline-item"><a href="./board.php?bo_table=<?php echo $list[$i]['bo_table'] ?>"><?php echo $bo_subject ?></a></li>
 					<li class="list-inline-item float-right"><i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?></li>
 				</ul>
-			</td>
-			<td class="d-none d-md-table-cell">
-				<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>"> 
-				<div class="dropdown d-inline">
-					<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($list[$i]['wr_name']); ?></a>
-					<?php echo $mb_info['menu'] ?>
-				</div>						
 			</td>
 			<td class="d-none d-md-table-cell"><?php echo $list[$i]['datetime2'] ?></td>
 		</tr>
