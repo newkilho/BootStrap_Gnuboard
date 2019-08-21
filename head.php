@@ -45,7 +45,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
 get_active_menu($menu_datas);
 
-$g5['sidebar'] = false;
+$g5['sidebar'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.php') ? true : false;
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<a class="navbar-brand" href="<?=G5_URL?>">

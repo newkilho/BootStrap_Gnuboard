@@ -93,7 +93,7 @@ $write_pages = chg_paging($write_pages);
 					</div>
 				</td>
 				<?php } ?>
-				<td class="d-none d-md-table-cell" >
+				<td class="d-none d-md-table-cell">
 					<?php if($list[$i]['is_notice']) { ?>
 					<i class="fa fa-bullhorn"></i>
 					<?php } else if($wr_id == $list[$i]['wr_id']) { ?>

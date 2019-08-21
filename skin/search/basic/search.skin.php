@@ -2,8 +2,9 @@
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-add_stylesheet('<link rel="stylesheet" href="'.$search_skin_url.'/style.css">', 0);
+//add_stylesheet('<link rel="stylesheet" href="'.$search_skin_url.'/style.css">', 0);
 
+$group_select = str_replace('class="select"', 'class="custom-select form-control"', $group_select);
 $write_pages = chg_paging($write_pages);
 ?>
 
@@ -15,7 +16,7 @@ $write_pages = chg_paging($write_pages);
 	<div class="card-body px-md-5 bg-light">
 		<div class="row">
 			<div class="col-6 col-md-2 pr-1 px-md-1 mb-2 mb-md-0">
-				<?php echo str_replace('class="select"', 'class="custom-select form-control"', $group_select) ?>
+				<?php echo $group_select ?>
 				<script>document.getElementById("gr_id").value = "<?php echo $gr_id ?>";</script>
 			</div>
 			<div class="col-6 col-md-2 pl-1 px-md-1 mb-2 mb-md-0">

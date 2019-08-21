@@ -7,6 +7,8 @@ if (G5_IS_MOBILE) {
     return;
 }
 
+$theme_config['sidebar'] = false;
+
 include_once(G5_THEME_PATH.'/head.php');
 
 if(is_file(G5_PATH.'/main.php'))
