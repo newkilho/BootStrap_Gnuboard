@@ -59,7 +59,7 @@ document.getElementById("view").value = "<?php echo $view ?>";
 <input type="hidden" name="page"     value="<?php echo $page; ?>">
 <input type="hidden" name="pressed"  value="">
 
-<h2 class="font-weight-normal pt-3 mb-4"><strong class="font-weight-extra-bold">&quot;<?php echo $mb_id ?>&quot;</strong> 님의 작성글</h2>
+<h2 class="font-weight-normal pt-3 mb-4"><strong class="font-weight-extra-bold">최신글</strong></h2>
 
 <table class="table xs-full"> <!-- table-striped table-hover  -->
 	<thead>
@@ -70,13 +70,12 @@ document.getElementById("view").value = "<?php echo $view ?>";
 					<input type="checkbox" class="custom-control-input" id="all_chk">
 					<label class="custom-control-label custom-checkbox" for="all_chk"></label>
 				</div>
-	
-				<!-- <input type="checkbox" id="chkall" onclick="if(this.checked) all_checked(true); else all_checked(false);"> -->
 			</th>
 			<?php } ?>
-			<th class="d-none d-md-table-cell" style="width: 8em;">그룹</th>
+			<!-- <th class="d-none d-md-table-cell" style="width: 8em;">그룹</th> -->
 			<th class="d-none d-md-table-cell" style="width: 8em;">게시판</th>
 			<th>제목</th>
+			<th class="d-none d-md-table-cell" style="width: 11em;">글쓴이</th>
 			<th class="d-none d-md-table-cell" style="width: 6em;">날짜</th>
 		</tr>
 	</thead>
@@ -88,6 +87,8 @@ document.getElementById("view").value = "<?php echo $view ?>";
 			$gr_subject = cut_str($list[$i]['gr_subject'], 20);
 			$bo_subject = cut_str($list[$i]['bo_subject'], 20);
 			$wr_subject = get_text(cut_str($list[$i]['wr_subject'], 80));
+
+			$mb_info = get_member_info($list[$i]['mb_id'], $list[$i]['wr_name'], $list[$i]['wr_email'], $list[$i]['wr_homepage']);
 		?>
 		<tr>
 			<?php if ($is_admin) { ?>
@@ -100,15 +101,25 @@ document.getElementById("view").value = "<?php echo $view ?>";
 				<input type="hidden" name="wr_id[<?php echo $i; ?>]" value="<?php echo $list[$i]['wr_id']; ?>">
 			</td>
 			<?php } ?>
-			<td class="d-none d-md-table-cell"><a href="./new.php?gr_id=<?php echo $list[$i]['gr_id'] ?>"><?php echo $gr_subject ?></a></td>
-			<td class="d-none d-md-table-cell"><a href="./board.php?bo_table=<?php echo $list[$i]['bo_table'] ?>"><?php echo $bo_subject ?></a></td>
+			<!--
+			<td class="d-none d-md-table-cell"><a href="./new.php?gr_id=<?php echo $list[$i]['gr_id'] ?>" class="text-dark"><?php echo $gr_subject ?></a></td>
+			-->
+			<td class="d-none d-md-table-cell"><a href="./board.php?bo_table=<?php echo $list[$i]['bo_table'] ?>" class="text-dark"><?php echo $bo_subject ?></a></td>
 			<td>
 				<a href="<?php echo $list[$i]['href'] ?>" class="text-dark"><?php echo $list[$i]['comment'] ?><?php echo $wr_subject ?></a>
 				<!-- 모바일 -->
 				<ul class="list-inline small text-muted mt-1 mb-0 d-md-none">
-					<li class="list-inline-item"><a href="./board.php?bo_table=<?php echo $list[$i]['bo_table'] ?>"><?php echo $bo_subject ?></a></li>
+					<li class="list-inline-item"><img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>"> <?php echo get_text($list[$i]['wr_name']); ?></li>
+					<li class="list-inline-item"><a href="./board.php?bo_table=<?php echo $list[$i]['bo_table'] ?>" class="text-muted"><?php echo $bo_subject ?></a></li>
 					<li class="list-inline-item float-right"><i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?></li>
 				</ul>
+			</td>
+			<td class="d-none d-md-table-cell">
+				<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>"> 
+				<div class="dropdown d-inline">
+					<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($list[$i]['wr_name']); ?></a>
+					<?php echo $mb_info['menu'] ?>
+				</div>
 			</td>
 			<td class="d-none d-md-table-cell"><?php echo $list[$i]['datetime2'] ?></td>
 		</tr>

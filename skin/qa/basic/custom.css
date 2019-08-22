@@ -1,0 +1,16 @@
+/* 커스텀 */
+.custom-checkbox { display: inline; }
+.custom-file-label:lang(ko)::after { content: "찾아보기"; }
+
+@media (max-width: 575px)
+{
+	.xs-100 { width: 100%; }
+	.xs-full {
+		width: 100vw;
+		position: relative;
+		/* margin-top: -36px; */
+		margin-left: -50vw;
+		left: 50%;
+	}
+	.xs-full td	{ padding: 8px 18px; }
+}

@@ -14,7 +14,7 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 <div class="mb-4"><?php echo $g5['ads'] ?></div>
 <?php } ?>
 
-<div class="mb-4">
+<div>
 
 	<blockquote><h3><?php echo cut_str(get_text($view['wr_subject']), 70); ?></h3></blockquote>
 

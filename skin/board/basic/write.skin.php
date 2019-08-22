@@ -8,7 +8,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 <div class="mb-4"><?php echo $g5['ads'] ?></div>
 <?php } ?>
 
-<div class="mb-4">
+<div>
 
 	<blockquote><h3><?php echo $g5['title'] ?></h3></blockquote>
 
@@ -42,10 +42,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 				$option_hidden .= '<input type="hidden" value="html1" name="html">';
 			} else {
 				$option .= '<div class="custom-control custom-checkbox custom-control-inline">'."\n".'<input type="checkbox" class="custom-control-input" id="html" name="html" onclick="html_auto_br(this);" value="'.$html_value.'" '.$html_checked.'>'."\n".'<label class="custom-control-label" for="html">HTML</label></div>';
-
-				//$option .= '<div class="custom-control custom-checkbox mb-2">'."\n".'<input type="checkbox" class="custom-control-input" id="html" name="html" onclick="html_auto_br(this);" value="'.$html_value.'" '.$html_checked.'>'."\n".'<label class="custom-control-label" for="html">HTML</label></div>';
-
-				//$option .= "\n".'<input type="checkbox" id="html" name="html" onclick="html_auto_br(this);" value="'.$html_value.'" '.$html_checked.'>'."\n".'<label for="html">HTML</label>';
 			}
 		}
 

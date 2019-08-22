@@ -122,12 +122,8 @@ function fsearch_submit(f)
          ?>
 
 		<li class="list-group-item px-0">
-			<h5><a href="<?php echo $list[$idx][$i]['href'] ?><?php echo $comment_href ?>"><?php echo $comment_def ?><?php echo $list[$idx][$i]['subject'] ?></a></h5>
-			<!-- <span class="text-dark text-uppercase font-weight-bold"><?php echo $bo_subject[$idx] ?></span> -->
-			<!-- <a href="#" class="btn btn-outline-primary btn-sm">자유게시판</a> -->
-			<span class="text-muted"><?php echo $list[$idx][$i]['wr_datetime'] ?> - <?php echo $list[$idx][$i]['content'] ?></span>
-			<?php echo $list[$idx][$i]['mb_name'] ?>
-			<?php echo get_member_info($list[$idx][$i]['wr_id'])['menu'] ?>
+			<a href="<?php echo $list[$idx][$i]['href'] ?><?php echo $comment_href ?>" class="text-dark"><?php echo $comment_def ?><?php echo $list[$idx][$i]['subject'] ?></a><br />
+			<small class="text-muted"><?php echo $list[$idx][$i]['wr_datetime'] ?> - <?php echo $list[$idx][$i]['content'] ?></small>
 		</li>
 		<?php } ?>
 	<?php }  ?>

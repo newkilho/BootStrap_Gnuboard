@@ -13,9 +13,9 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 	<div class="card-header">
 		<?php echo $po['po_subject'] ?>
 	</div>
-	<ul class="list-group list-group-flush">
+	<ul class="list-group">
 		<?php for ($i=1; $i<=9 && $po["po_poll{$i}"]; $i++) {  ?>
-		<li class="list-group-item">
+		<li class="list-group-item border-0">
 			<div class="custom-control custom-radio">
 				<input type="radio" name="gb_poll" value="<?php echo $i ?>" id="gb_poll_<?php echo $i ?>" class="custom-control-input">
 				<label class="custom-control-label custom-radio" for="gb_poll_<?php echo $i ?>"><?php echo $po['po_poll'.$i] ?></label>

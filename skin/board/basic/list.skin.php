@@ -17,7 +17,7 @@ $write_pages = chg_paging($write_pages);
 <div class="mb-4"><?php echo $g5['ads'] ?></div>
 <?php } ?>
 
-<div class="">
+<div>
 
 	<blockquote><h3><?php echo $board['bo_subject'] ?></h3></blockquote>
 
@@ -29,7 +29,7 @@ $write_pages = chg_paging($write_pages);
 
 	<ul class="nav nav-tabs border-bottom-0">
 		<li class="nav-item">
-			<a class="nav-link <?php if($sca=='') echo 'active'; ?>" href="<?php echo $category_href ?>">전체</a>
+			<a class="nav-link <?php if($sca=='') echo 'active'; ?> text-dark" href="<?php echo $category_href ?>">전체</a>
 		</li>
 		<?php
 			$categories = explode('|', $board['bo_category_list']);
@@ -37,7 +37,7 @@ $write_pages = chg_paging($write_pages);
 			{
 		?>
 		<li class="nav-item">
-			<a class="nav-link <?php if($category==$sca) echo 'active'; ?>" href="<?php echo $category_href.'&sca='.urlencode($category); ?>"><?php echo $category ?></a>
+			<a class="nav-link <?php if($category==$sca) echo 'active'; ?> text-dark" href="<?php echo $category_href.'&sca='.urlencode($category); ?>"><?php echo $category ?></a>
 		</li>
 		<?php
 			}
@@ -60,7 +60,7 @@ $write_pages = chg_paging($write_pages);
 		<thead>
 			<tr class="d-none d-md-table-row">
 				<?php if($is_checkbox) { ?>
-				<th style="width: 20px;">
+				<th style="width: 3em;">
 					<div class="custom-control custom-checkbox">
 						<input type="checkbox" class="custom-control-input" id="chkall" onclick="if(this.checked) all_checked(true); else all_checked(false);">
 						<label class="custom-control-label custom-checkbox" for="chkall"></label>
@@ -86,7 +86,7 @@ $write_pages = chg_paging($write_pages);
 			?>
 			<tr class="<?php if($list[$i]['is_notice']) echo "table-primary"; ?>">
 				<?php if($is_checkbox) { ?>
-				<td>
+				<td style="width: 3em;">
 					<div class="custom-control custom-checkbox">
 						<input type="checkbox" class="custom-control-input" name="chk_wr_id[]" value="<?php echo $list[$i]['wr_id'] ?>" id="chk_wr_id_<?php echo $i ?>">
 						<label class="custom-control-label custom-checkbox" for="chk_wr_id_<?php echo $i ?>"></label>
@@ -129,7 +129,7 @@ $write_pages = chg_paging($write_pages);
 					<ul class="list-inline small text-muted mt-1 mb-0 d-md-none">
 						<li class="list-inline-item">
 							<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>">
-							<?php echo get_text($list[$i]['wr_name']); // php echo $view['name']?>
+							<?php echo get_text($list[$i]['wr_name']); ?>
 						</li>
 						<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?></li>
 						<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?></li>
