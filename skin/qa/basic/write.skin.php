@@ -10,11 +10,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/custom.css">', 0);
 <div class="mb-4"><?php echo $g5['ads'] ?></div>
 <?php } ?>
 
+<!-- 게시물 작성/수정 시작 { -->
 <div>
 
 	<blockquote><h3><?php echo $qaconfig['qa_title'] ?></h3></blockquote>
 
-    <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>">
     <input type="hidden" name="qa_id" value="<?php echo $qa_id ?>">

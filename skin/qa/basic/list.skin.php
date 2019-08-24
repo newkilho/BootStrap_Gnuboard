@@ -81,7 +81,7 @@ $list_pages = chg_paging($list_pages);
 				<?php } ?>
 				<td class="d-none d-md-table-cell"><?php echo $list[$i]['num']; ?></td>
 				<td>
-					<span class="bo_cate_link"><?php echo $list[$i]['category']; ?></span>
+					<span class="badge badge-primary"><?php echo $list[$i]['category']; ?></span>
 					<a href="<?php echo $list[$i]['view_href']; ?>" class="text-dark">
 						<?php echo $list[$i]['subject']; ?>
 						<?php if ($list[$i]['icon_file']) echo " <i class=\"fa fa-download\" aria-hidden=\"true\"></i>" ; ?>
@@ -112,7 +112,7 @@ $list_pages = chg_paging($list_pages);
 	<div class="d-flex justify-content-center mb-2">
 		<?php if($is_checkbox) { ?>
 		<div class="btn-group xs-100">
-			<button type="submit" name="btn_submit" value="선택삭제" title="선택삭제" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-trash-o" aria-hidden="true"></i> 선택삭제</button>
+			<button type="submit" name="btn_submit" value="선택삭제" title="선택삭제" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-trash" aria-hidden="true"></i> 선택삭제</button>
 		</div>
 		<?php } ?>
 	</div>
