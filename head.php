@@ -47,20 +47,20 @@ get_active_menu($menu_datas);
 
 $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.php') ? true : false;
 ?>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 	<a class="navbar-brand" href="<?=G5_URL?>">
 		<img height="48" src="<?php echo G5_URL ?>/logo.png">
 	</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#TopNavbar" aria-controls="TopNavbar" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	<div class="collapse navbar-collapse" id="TopNavbar">
 		<ul class="navbar-nav mr-auto">
 			<?php echo get_layout_menu($menu_datas) ?>
 			<?php echo outlogin('theme/basic') ?>
 		</ul>
-		<form class="form-inline my-2 my-lg-0 d-none d-md-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
+		<form class="form-inline my-2 my-lg-0 d-none d-lg-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
 			<input type="hidden" name="sfl" value="wr_subject||wr_content">
 			<input type="hidden" name="sop" value="and">
 
@@ -70,7 +70,7 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 	</div>
 </nav>
 
-<main role="main" class="container">
+<main role="main" class="container mt-4">
 
 	<?php if($g5['sidebar']['right']) { ?>
 		<div class="row">
