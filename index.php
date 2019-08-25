@@ -17,7 +17,7 @@ if(is_file(G5_PATH.'/main.php'))
 }else{
 ?>
 
-<p>Hello Word.</p>
+<p>Hello World.</p>
 
 <?php
 }

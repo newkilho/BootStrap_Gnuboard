@@ -11,7 +11,6 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #fff;
-  font-size: 14px;
 }
 
 .logo {
@@ -34,7 +33,6 @@ body {
   box-sizing: border-box;
   height: auto;
   padding: 10px;
-  font-size: 16px;
 }
 .form-signin .form-control:focus {
   z-index: 2;
