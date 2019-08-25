@@ -4,8 +4,8 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
 <div class="card mb-4">
 	<div class="card-header">
-		<h4>
-			<span class="badge badge-primary">답변</span> 
+		<h4 class="mb-0">
+			<span class="badge badge-primary align-top">답변</span> 
 			<?php echo get_text($answer['qa_subject']); ?>
 		</h4>
 	</div>

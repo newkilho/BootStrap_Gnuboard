@@ -105,15 +105,15 @@ $list_pages = chg_paging($list_pages);
 	</table>
 </div>
 
-<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-3">
-	<div class="d-flex justify-content-center mb-2">
+<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-4">
+	<div class="d-flex justify-content-center mb-2 mb-sm-0">
 		<?php if($is_checkbox) { ?>
 		<div class="btn-group xs-100">
 			<button type="submit" name="btn_submit" value="선택삭제" title="선택삭제" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-trash" aria-hidden="true"></i> 선택삭제</button>
 		</div>
 		<?php } ?>
 	</div>
-	<div class="d-flex justify-content-center mb-2">
+	<div class="d-flex justify-content-center">
 		<div class="btn-group xs-100">
 			<?php if ($list_href) { ?>
 			<a href="<?php echo $list_href ?>" class="btn btn-primary" title="목록"><i class="fa fa-list" aria-hidden="true"></i> 목록</a><?php } ?>

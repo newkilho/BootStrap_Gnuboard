@@ -167,7 +167,7 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 	</ul>
 
 	<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-4">
-		<div class="d-flex justify-content-center mb-2">
+		<div class="d-flex justify-content-center mb-2 mb-sm-0">
 			<?php if ($update_href || $delete_href || $copy_href || $move_href || $search_href) { ?>
 			<div class="btn-group xs-100">
 				<?php if ($update_href) { ?><a href="<?php echo $update_href ?>" class="btn btn-danger"><i class="fas fa-pen-square"></i> 수정</a><?php } ?>
@@ -178,7 +178,7 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 			</div>
 			<?php } ?>
 		</div>
-		<div class="d-flex justify-content-center mb-2">
+		<div class="d-flex justify-content-center">
 			<div class="btn-group xs-100">
 				<a href="<?php echo $list_href ?>" class="btn btn-primary"><i class="fa fa-list"></i> 목록</a>
 				<?php if ($scrap_href) { ?><a href="<?php echo $scrap_href;  ?>" target="_blank" class="btn btn-primary" onclick="win_scrap(this.href); return false;"><i class="fa fa-thumbtack"></i> 스크랩</a><?php } ?>

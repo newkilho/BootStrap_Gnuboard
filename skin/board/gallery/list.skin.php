@@ -99,8 +99,8 @@ $write_pages = chg_paging($write_pages);
 		<?php echo $write_pages;  ?>
 	</div>
 
-	<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-3">
-		<div class="d-flex justify-content-center mb-2">
+	<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-4">
+		<div class="d-flex justify-content-center mb-2 mb-sm-0">
 			<?php if($is_checkbox) { ?>
 			<div class="btn-group xs-100">
 				<button type="submit" name="btn_submit" value="선택삭제" onclick="document.pressed=this.value" class="btn btn-danger"><i class="fas fa-trash-alt"></i> 삭제</button>
@@ -113,7 +113,7 @@ $write_pages = chg_paging($write_pages);
 			</div>
 			<?php } ?>
 		</div>
-		<div class="d-flex justify-content-center mb-2">
+		<div class="d-flex justify-content-center">
 			<div class="btn-group xs-100">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#search"><i class="fas fa-search"></i> 검색</button>
 				<?php if($list_href) { ?><a href="<?php echo $list_href ?>" class="btn btn-primary"><i class="fas fa-list" aria-hidden="true"></i> 목록</a><?php } ?>

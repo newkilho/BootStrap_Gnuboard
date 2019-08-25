@@ -3,42 +3,11 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 include_once(G5_LIB_PATH.'/thumbnail.lib.php');
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/custom.css">', 0);
 
 $mb_info = get_member_info($view['mb_id'], $view['qa_name'], $view['qa_email']);
 //$view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($view['wr_datetime'], 11, 8) : substr($view['wr_datetime'], 2, 8);
 ?>
-
-<style>
-/* 커스텀 */
-.anchor { position: relative } 
-.anchor a { position: absolute; top: -60px }
-
-.custom-checkbox { display: inline; }
-.custom-file-label:lang(ko)::after { content: "찾아보기"; }
-
-.list-icon { width: 20px; height: 20px; vertical-align: text-bottom; }
-.view-icon { width: 48px; height: 48px; }
-.comm-icon { width: 48px; height: 48px; }
-
-@media (max-width: 575px)
-{
-	#captcha_audio {display:none !important;}
-
-	.xs-100 { width: 100%; }
-	.xs-full {
-		width: 100vw;
-		position: relative;
-		/* margin-top: -36px; */
-		margin-left: -50vw;
-		left: 50%;
-	}
-	.xs-full td	{ padding: 8px 18px; }
-
-	.list-icon { width: 18px; height: 18px; vertical-align: text-top; }
-	.comm-icon { width: 24px; height: 24px; }
-}
-</style>
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 
@@ -109,8 +78,8 @@ $mb_info = get_member_info($view['mb_id'], $view['qa_name'], $view['qa_email']);
 	</ul>
 	<?php } ?>
 
-	<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-3">
-		<div class="d-flex justify-content-center mb-2">
+	<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-4">
+		<div class="d-flex justify-content-center mb-2 mb-sm-0">
 			<?php if($update_href||$delete_href) { ?>
 			<div class="btn-group xs-100">
 				<?php if ($update_href) { ?><a href="<?php echo $update_href ?>" class="btn btn-danger" title="수정"><i class="fas fa-pen-square"></i> 수정</a><?php } ?>
@@ -118,7 +87,7 @@ $mb_info = get_member_info($view['mb_id'], $view['qa_name'], $view['qa_email']);
 			</div>
 			<?php } ?>
 		</div>
-		<div class="d-flex justify-content-center mb-2">
+		<div class="d-flex justify-content-center">
 			<div class="btn-group xs-100">
 				<?php if ($list_href) { ?>
 				<a href="<?php echo $list_href ?>" class="btn btn-primary" title="목록"><i class="fa fa-list" aria-hidden="true"></i> 목록</a><?php } ?>
