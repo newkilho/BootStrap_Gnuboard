@@ -79,9 +79,9 @@ $write_pages = chg_paging($write_pages);
 							</div>					
 						</small>
 						<small class="text-muted text-right">
-							<i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?>
-							<i class="fas fa-eye pl-1"></i> <?php echo number_format($list[$i]['wr_hit']) ?>
-							<i class="fas fa-comment-dots pl-1"></i> <?php echo number_format($list[$i]['wr_comment']) ?>
+							<i class="far fa-clock"></i> <?php echo $list[$i]['datetime2'] ?>
+							<i class="far fa-eye pl-1"></i> <?php echo number_format($list[$i]['wr_hit']) ?>
+							<i class="far fa-comment-dots pl-1"></i> <?php echo number_format($list[$i]['wr_comment']) ?>
 						</small>
 					</div>
 				</div>

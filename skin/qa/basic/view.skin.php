@@ -27,12 +27,12 @@ $mb_info = get_member_info($view['mb_id'], $view['qa_name'], $view['qa_email']);
 			</div>
 			<div>
 				<ul class="list-inline text-muted small pt-1 m-0">
-					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo $view['datetime'] ?></li>
+					<li class="list-inline-item"><i class="far fa-clock"></i> <?php echo $view['datetime'] ?></li>
 					<?php if($view['email']) { ?>
-					<li class="list-inline-item"><i class="fas fa-envelope"></i> <?php echo $view['email']; ?></li>
+					<li class="list-inline-item"><i class="far fa-envelope"></i> <?php echo $view['email']; ?></li>
 					<?php } ?>
 					<?php if($view['hp']) { ?>
-					<li class="list-inline-item"><i class="fas fa-phone" aria-hidden="true"></i> <?php echo $view['hp']; ?></li>
+					<li class="list-inline-item"><i class="fas fa-mobile-alt"></i> <?php echo $view['hp']; ?></li>
 					<?php } ?>
 				</ul>
 			</div>

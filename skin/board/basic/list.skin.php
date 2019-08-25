@@ -127,9 +127,9 @@ $write_pages = chg_paging($write_pages);
 							<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>">
 							<?php echo get_text($list[$i]['wr_name']); ?>
 						</li>
-						<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?></li>
-						<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?></li>
-						<li class="list-inline-item float-right"><i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?></li>
+						<li class="list-inline-item"><i class="far fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?></li>
+						<li class="list-inline-item"><i class="far fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?></li>
+						<li class="list-inline-item float-right"><i class="far fa-clock"></i> <?php echo $list[$i]['datetime2'] ?></li>
 					</ul>
 				</td>
 				<td class="d-none d-md-table-cell">

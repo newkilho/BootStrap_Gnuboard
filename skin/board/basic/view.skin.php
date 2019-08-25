@@ -30,9 +30,9 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 			</div>
 			<div>
 				<ul class="list-inline text-muted small pt-1 m-0">
-					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo $view['datetime'] ?></li>
-					<li class="list-inline-item"><i class="fas fa-eye"></i> <?php echo number_format($view['wr_hit']) ?> 회</li>
-					<li class="list-inline-item"><i class="fas fa-comment-dots"></i> <?php echo number_format($view['wr_comment']) ?> 건</li>
+					<li class="list-inline-item"><i class="far fa-clock"></i> <?php echo $view['datetime'] ?></li>
+					<li class="list-inline-item"><i class="far fa-eye"></i> <?php echo number_format($view['wr_hit']) ?> 회</li>
+					<li class="list-inline-item"><i class="far fa-comment-dots"></i> <?php echo number_format($view['wr_comment']) ?> 건</li>
 				</ul>
 			</div>
 		</div>
