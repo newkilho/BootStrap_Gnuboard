@@ -1,16 +1,8 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-// add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
+add_stylesheet('<link rel="stylesheet" href="'.$connect_skin_url.'/custom.css">', 0);
 ?>
-
-<style>
-	p:last-child { margin-bottom: 0; }
-</style>
-
-<?php if($g5['ads']&&!$wr_id) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
 
 <!-- FAQ 시작 { -->
 <?php

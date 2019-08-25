@@ -5,10 +5,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$connect_skin_url.'/custom.css">', 0);
 ?>
 
-<?php if($g5['ads']&&!$wr_id) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
-
 <!-- 현재접속자 목록 시작 { -->
 <div>
 

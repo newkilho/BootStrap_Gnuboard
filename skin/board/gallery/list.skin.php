@@ -6,10 +6,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 $write_pages = chg_paging($write_pages);
 ?>
 
-<?php if($g5['ads']&&!$wr_id) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
-
 <div>
 
 	<blockquote><h3><?php echo $board['bo_subject'] ?></h3></blockquote>

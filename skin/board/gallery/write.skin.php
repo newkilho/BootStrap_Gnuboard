@@ -4,12 +4,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 0);
 ?>
 
-<?php if($g5['ads']) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
-
-<section class="mb-4">
-	<div>
+<div>
 
 	<!-- <h2 class="mb-4"><?php echo $board['bo_subject'] ?> 쓰기</h3> -->
 
@@ -225,8 +220,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 
 	</form>
 
-	</div>
-</section>
+</div>
 
 <script>
 <?php if($write_min || $write_max) { ?>

@@ -4,10 +4,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 0);
 ?>
 
-<?php if($g5['ads']) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
-
 <div>
 
 	<blockquote><h3><?php echo $g5['title'] ?></h3></blockquote>
@@ -33,8 +29,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 		if ($is_notice) {
 
 			$option .= '<div class="custom-control custom-checkbox custom-control-inline">'."\n".'<input type="checkbox" class="custom-control-input" id="notice" name="notice" value="1" '.$notice_checked.'>'."\n".'<label class="custom-control-label" for="notice">공지</label></div>';
-
-			//$option .= "\n".'<input class="form-custom-control-input" type="checkbox" id="notice" name="notice" value="1" '.$notice_checked.'>'."\n".'<label for="notice">공지</label>';
 		}
 
 		if ($is_html) {
@@ -48,8 +42,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 		if ($is_secret) {
 			if ($is_admin || $is_secret==1) {
 				$option .= '<div class="custom-control custom-checkbox custom-control-inline">'."\n".'<input type="checkbox" class="custom-control-input" id="secret" name="secret" value="secret" '.$secret_checked.'>'."\n".'<label class="custom-control-label" for="secret">비밀글</label></div>';
-
-				//$option .= "\n".'<input type="checkbox" id="secret" name="secret" value="secret" '.$secret_checked.'>'."\n".'<label for="secret">비밀글</label>';
 			} else {
 				$option_hidden .= '<input type="hidden" name="secret" value="secret">';
 			}
@@ -57,8 +49,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 
 		if ($is_mail) {
 			$option .= '<div class="custom-control custom-checkbox custom-control-inline">'."\n".'<input type="checkbox" class="custom-control-input" id="mail" name="mail" value="mail" '.$recv_email_checked.'>'."\n".'<label class="custom-control-label" for="mail">답변메일받기</label></div>';
-
-			//$option .= "\n".'<input type="checkbox" id="mail" name="mail" value="mail" '.$recv_email_checked.'>'."\n".'<label for="mail">답변메일받기</label>';
 		}
 	}
 
@@ -149,14 +139,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">내용</label>
-
 		<div class="wr_content col-sm-10 <?php echo $is_dhtml_editor ? $config['cf_editor'] : ''; ?>">
 			<?php if($write_min || $write_max) { ?>
 			<!-- 최소/최대 글자 수 사용 시 -->
 			<small>이 게시판은 최소 <strong><?php echo $write_min; ?></strong>글자 이상, 최대 <strong><?php echo $write_max; ?></strong>글자 이하까지 글을 쓰실 수 있습니다.</small>
 			<?php } ?>
-			<?php $editor_html = str_replace('<textarea id="wr_content" name="wr_content"', '<textarea id="wr_content" name="wr_content" class="form-control" rows="12"', $editor_html); ?>
-
+			<?php if(!$is_dhtml_editor) $editor_html = str_replace('<textarea id="wr_content" name="wr_content"', '<textarea id="wr_content" name="wr_content" class="form-control"', $editor_html); ?>
 			<?php echo $editor_html; // 에디터 사용시는 에디터로, 아니면 textarea 로 노출 ?>
 			<?php if($write_min || $write_max) { ?>
 			<!-- 최소/최대 글자 수 사용 시 -->
