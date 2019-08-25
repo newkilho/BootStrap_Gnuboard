@@ -70,8 +70,7 @@ $write_pages = chg_paging($write_pages);
 						<?php } ?>
 						<a href="<?php echo $list[$i]['href'] ?>" class="text-dark"><?php echo $list[$i]['subject'] ?></a>
 					</div>
-
-					<div class="card-text d-inline">
+					<div class="d-flex justify-content-between">
 						<small class="text-muted">
 							<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>"> 
 							<div class="dropdown d-inline">
@@ -79,10 +78,10 @@ $write_pages = chg_paging($write_pages);
 								<?php echo $mb_info['menu'] ?>
 							</div>					
 						</small>
-						<small class="text-muted float-right">
+						<small class="text-muted text-right">
 							<i class="fas fa-clock"></i> <?php echo $list[$i]['datetime2'] ?>
-							<i class="pl-2 fas fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?>
-							<i class="pl-2 fas fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?>
+							<i class="fas fa-eye pl-1"></i> <?php echo number_format($list[$i]['wr_hit']) ?>
+							<i class="fas fa-comment-dots pl-1"></i> <?php echo number_format($list[$i]['wr_comment']) ?>
 						</small>
 					</div>
 				</div>

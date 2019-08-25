@@ -49,8 +49,8 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 					<?php if ($list[$i]['is_edit']) { ?><li class="list-inline-item"><i class="fas fa-pen-square"></i> <a href="<?php echo $c_edit_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;" class="text-muted">수정</a></li><?php } ?>
 					<?php if ($list[$i]['is_del'])  { ?><li class="list-inline-item"><i class="fas fa-trash"></i> <a href="<?php echo $list[$i]['del_link'];  ?>" onclick="return comment_delete();" class="text-muted">삭제</a></li><?php } ?>
 				</ul>
-				<span id="edit_<?php echo $comment_id ?>" class="bo_vc_w"></span><!-- 수정 -->
-		        <span id="reply_<?php echo $comment_id ?>" class="bo_vc_w"></span><!-- 답변 -->
+				<span id="edit_<?php echo $comment_id ?>" class=""></span><!-- 수정 -->
+		        <span id="reply_<?php echo $comment_id ?>" class=""></span><!-- 답변 -->
 
 		        <input type="hidden" value="<?php echo strstr($list[$i]['wr_option'],"secret") ?>" id="secret_comment_<?php echo $comment_id ?>">
 		        <textarea id="save_comment_<?php echo $comment_id ?>" style="display:none"><?php echo get_text($list[$i]['content1'], 0) ?></textarea>
@@ -70,7 +70,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         $w = 'c';
 ?>
 
-<div id="bo_vc_w">
+<div id="bo_vc_w" class="mb-4">
 	<form name="fviewcomment" id="fviewcomment" action="<?php echo $comment_action_url; ?>" onsubmit="return fviewcomment_submit(this);" method="post" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>" id="w">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
