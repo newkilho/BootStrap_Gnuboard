@@ -45,7 +45,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
 get_active_menu($menu_datas);
 
-$g5['sidebar'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.php') ? true : false;
+$g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.php') ? true : false;
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<a class="navbar-brand" href="<?=G5_URL?>">
@@ -72,7 +72,7 @@ $g5['sidebar'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.php') ? true : f
 
 <main role="main" class="container">
 
-	<?php if($g5['sidebar']) { ?>
+	<?php if($g5['sidebar']['right']) { ?>
 		<div class="row">
 			<div class="col-lg-9">
 	<?php } ?>
