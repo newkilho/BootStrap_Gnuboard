@@ -6,11 +6,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/custom.css">', 0);
 ?>
 
-<?php if($g5['ads']) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
-
-<!-- 게시물 작성/수정 시작 { -->
 <div>
 
 	<blockquote><h3><?php echo $qaconfig['qa_title'] ?></h3></blockquote>
@@ -208,4 +203,3 @@ $('.custom-file-input').on('change', function() {
 	$(this).next('.custom-file-label').addClass("selected").html(fileName); 
 });
 </script>
-<!-- } 게시물 작성/수정 끝 -->

@@ -2,7 +2,6 @@
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 include_once(G5_LIB_PATH.'/thumbnail.lib.php');
 
-// add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/custom.css">', 0);
 
 $mb_info = get_member_info($view['mb_id'], $view['qa_name'], $view['qa_email']);
@@ -10,14 +9,6 @@ $mb_info = get_member_info($view['mb_id'], $view['qa_name'], $view['qa_email']);
 ?>
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
-
-<?php if($g5['ads']) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
-
-<!--
-<?php echo '<span class="bo_v_cate">'.$view['category'].'</span> '; // 분류 출력 끝 ?>
--->
 
 <div>
 
@@ -145,7 +136,6 @@ if(!$view['qa_type']) {
 	</table>
 </div>
 <?php } ?>
-<!-- } 게시판 읽기 끝 -->
 
 <script>
 $(function() {

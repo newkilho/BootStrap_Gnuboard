@@ -12,10 +12,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/custom.css">', 0);
 $list_pages = chg_paging($list_pages);
 ?>
 
-<?php if($g5['ads']&&!$wr_id) { ?>
-<div class="mb-4"><?php echo $g5['ads'] ?></div>
-<?php } ?>
-
 <div>
 
 	<blockquote><h3><?php echo $qaconfig['qa_title'] ?></h3></blockquote>

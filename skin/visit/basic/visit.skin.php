@@ -4,7 +4,6 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 global $is_admin;
 ?>
 
-<!-- 접속자집계 시작 { -->
 <div class="card">
 	<div class="card-header">
 		접속자집계
@@ -22,4 +21,3 @@ global $is_admin;
 	</div>
 	<?php } ?>
 </div>
-<!-- } 접속자집계 끝 -->
