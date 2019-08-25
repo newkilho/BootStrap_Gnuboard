@@ -62,12 +62,14 @@ function get_layout_breadcrumb($menu_datas, $recursive=false)
 	{
 		if($item['me_code'] == substr($g5['me_code'], 0, strlen($item['me_code'])))
 			if($item['me_code'] != $g5['me_code'])
-				$output .= '<li><a href="'.$item['me_link'].'">'.$item['me_name'].'</a></li>';
+				$output .= '<li class="breadcrumb-item"><a href="'.$item['me_link'].'">'.$item['me_name'].'</a></li>';
+			else
+				$output .= '<li class="breadcrumb-item active">'.$item['me_name'].'</li>';
 
 		if($item['sub']) $output .= get_layout_breadcrumb($item['sub'], true);
 	}
 
-	if(!$recursive) $output = '<li><a href="'.G5_URL.'">Home</a></li>'.$output;
+	if(!$recursive) $output = '<li class="breadcrumb-item"><a href="'.G5_URL.'">Home</a></li>'.$output;
 
 	return $output;
 }

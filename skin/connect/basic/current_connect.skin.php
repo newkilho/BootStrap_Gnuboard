@@ -29,7 +29,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$connect_skin_url.'/custom.css">'
 				$location = $list[$i]['lo_location'];
 				// 최고관리자에게만 허용
 				// 이 조건문은 가능한 변경하지 마십시오.
-				if ($list[$i]['lo_url'] && $is_admin == 'super') $display_location = "<a href=\"".$list[$i]['lo_url']."\">".$location."</a>";
+				if ($list[$i]['lo_url'] && $is_admin == 'super') $display_location = '<a href="'.$list[$i]['lo_url'].'" class="text-dark">'.$location.'</a>';
 				else $display_location = $location;
 
 				$mb_info = array();
