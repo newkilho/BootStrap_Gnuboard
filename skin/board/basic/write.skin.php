@@ -80,7 +80,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">비밀번호</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="password" name="wr_password" id="wr_password" <?php echo $password_required ?>" placeholder="비밀번호">
+			<input class="form-control" type="password" name="wr_password" id="wr_password" <?php echo $password_required ?> placeholder="비밀번호">
 		</div>
 	</div>
 	<?php } ?>
