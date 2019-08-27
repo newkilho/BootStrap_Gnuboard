@@ -1,10 +1,9 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-add_stylesheet('<link rel="stylesheet" href="'.$connect_skin_url.'/custom.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="'.$faq_skin_url.'/custom.css">', 0);
 ?>
 
-<!-- FAQ 시작 { -->
 <?php
 if ($himg_src)
     echo '<div><img src="'.$himg_src.'" class="img-fluid"></div>';
@@ -72,5 +71,3 @@ echo '<div>'.conv_content($fm['fm_tail_html'], 1).'</div>';
 if ($timg_src)
     echo '<div><img src="'.$timg_src.'" class="img-fluid"></div>';
 ?>
-
-<!-- } FAQ 끝 -->
