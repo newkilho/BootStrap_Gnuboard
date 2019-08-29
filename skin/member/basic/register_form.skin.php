@@ -12,18 +12,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/custom.css">')
 <?php } ?>
 
 <div class="form-join">
-<form id="fregisterform" name="fregisterform" action="<?php echo $register_action_url ?>" onsubmit="return fregisterform_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
-<input type="hidden" name="w" value="<?php echo $w ?>">
-<input type="hidden" name="url" value="<?php echo $urlencode ?>">
-<input type="hidden" name="agree" value="<?php echo $agree ?>">
-<input type="hidden" name="agree2" value="<?php echo $agree2 ?>">
-<input type="hidden" name="cert_type" value="<?php echo $member['mb_certify']; ?>">
-<input type="hidden" name="cert_no" value="">
-<?php if (isset($member['mb_sex'])) {  ?><input type="hidden" name="mb_sex" value="<?php echo $member['mb_sex'] ?>"><?php }  ?>
-<?php if (isset($member['mb_nick_date']) && $member['mb_nick_date'] > date("Y-m-d", G5_SERVER_TIME - ($config['cf_nick_modify'] * 86400))) { // 닉네임수정일이 지나지 않았다면  ?>
-<input type="hidden" name="mb_nick_default" value="<?php echo get_text($member['mb_nick']) ?>">
-<input type="hidden" name="mb_nick" value="<?php echo get_text($member['mb_nick']) ?>">
-<?php }  ?>
+	<form id="fregisterform" name="fregisterform" action="<?php echo $register_action_url ?>" onsubmit="return fregisterform_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+	<input type="hidden" name="w" value="<?php echo $w ?>">
+	<input type="hidden" name="url" value="<?php echo $urlencode ?>">
+	<input type="hidden" name="agree" value="<?php echo $agree ?>">
+	<input type="hidden" name="agree2" value="<?php echo $agree2 ?>">
+	<input type="hidden" name="cert_type" value="<?php echo $member['mb_certify']; ?>">
+	<input type="hidden" name="cert_no" value="">
+	<?php if (isset($member['mb_sex'])) {  ?><input type="hidden" name="mb_sex" value="<?php echo $member['mb_sex'] ?>"><?php }  ?>
+	<?php if (isset($member['mb_nick_date']) && $member['mb_nick_date'] > date("Y-m-d", G5_SERVER_TIME - ($config['cf_nick_modify'] * 86400))) { // 닉네임수정일이 지나지 않았다면  ?>
+	<input type="hidden" name="mb_nick_default" value="<?php echo get_text($member['mb_nick']) ?>">
+	<input type="hidden" name="mb_nick" value="<?php echo get_text($member['mb_nick']) ?>">
+	<?php }  ?>
 
 	<div class="text-center mb-5">
 		<a href="<?php echo G5_URL ?>"><img src="<?php echo G5_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>" style="max-width:150px; width:100%; height:auto;"></a>

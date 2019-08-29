@@ -44,8 +44,8 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 			        <?php echo $comment ?>
 		        </div>
 				<ul class="list-inline small text-muted mb-2">
-					<li class="list-inline-item"><i class="fas fa-clock"></i> <?php echo $list[$i]['datetime']; ?></li>
-					<?php if ($list[$i]['is_reply']) { ?><li class="list-inline-item"><i class="fas fa-comment-dots"></i> <a href="<?php echo $c_reply_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;" class="text-muted">댓글</a></li><?php } ?>
+					<li class="list-inline-item"><i class="far fa-clock"></i> <?php echo $list[$i]['datetime']; ?></li>
+					<?php if ($list[$i]['is_reply']) { ?><li class="list-inline-item"><i class="far fa-comment-dots"></i> <a href="<?php echo $c_reply_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;" class="text-muted">댓글</a></li><?php } ?>
 					<?php if ($list[$i]['is_edit']) { ?><li class="list-inline-item"><i class="fas fa-pen-square"></i> <a href="<?php echo $c_edit_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;" class="text-muted">수정</a></li><?php } ?>
 					<?php if ($list[$i]['is_del'])  { ?><li class="list-inline-item"><i class="fas fa-trash"></i> <a href="<?php echo $list[$i]['del_link'];  ?>" onclick="return comment_delete();" class="text-muted">삭제</a></li><?php } ?>
 				</ul>

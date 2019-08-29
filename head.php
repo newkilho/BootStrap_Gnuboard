@@ -1,10 +1,15 @@
 <?
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-if(in_array(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_BBS_PATH)), array('/register.php', '/register_form.php')))
+switch(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)))
 {
-	include_once(G5_THEME_PATH.'/head.def.php');
-	return;
+	case '/bbs/register.php':
+	case '/bbs/register_form.php':
+	case '/bbs/register_result.php':
+	case '/plugin/social/register_member.php':
+		include_once(G5_THEME_PATH.'/head.def.php');
+		return;
+		break;
 }
 
 include_once(G5_THEME_PATH.'/head.def.php');

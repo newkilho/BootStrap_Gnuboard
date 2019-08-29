@@ -4,12 +4,23 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/custom.css">');
 ?>
 
+<style>
+#sns_login h3 { display: none; }
+#sns_login { border-bottom: 1px solid #edeaea; margin-bottom: 15px; }
+.sns-wrap { margin: 10px 0 10px; }
+</style>
+
 <div class="form-signin">
 <form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post">
 
 	<div class="text-center mb-5">
 		<a href="<?php echo G5_URL ?>"><img src="<?php echo G5_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>" class="logo"></a>
 	</div>
+
+	<?php
+    // 소셜로그인 사용시 소셜로그인 버튼
+    @include_once(get_social_skin_path().'/social_login.skin.php');
+    ?>
 
 	<div>
 		<label for="inputUser" class="sr-only">아이디</label>
@@ -26,11 +37,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/custom.css">')
 	<div class="mb-4">
 		<button class="btn btn-primary btn-block" type="submit">로그인</button>
 	</div>
-
-	<?php
-    // 소셜로그인 사용시 소셜로그인 버튼
-    @include_once(get_social_skin_path().'/social_login.skin.php');
-    ?>
 
 	<div class="text-center">
 		<a href="./register.php">회원 가입</a> |

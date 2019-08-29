@@ -62,7 +62,7 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 
 	<div id="bo_v_con" class="mb-2">
 		<!-- 본문 내용 -->
-		<?php echo get_view_thumbnail($view['content']); ?>
+		<?php echo str_replace('<img src="', '<img class="img-fluid" src="', get_view_thumbnail($view['content'])); ?>
 		<?php //echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>
 	</div>
 

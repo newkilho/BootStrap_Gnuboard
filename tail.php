@@ -6,12 +6,16 @@ if (G5_IS_MOBILE) {
     return;
 }
 
-if(in_array(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)), array('/bbs/register.php', '/bbs/register_form.php')))
+switch(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)))
 {
-	include_once(G5_THEME_PATH."/tail.sub.php");
-	return;
+	case '/bbs/register.php':
+	case '/bbs/register_form.php':
+	case '/bbs/register_result.php':
+	case '/plugin/social/register_member.php':
+		include_once(G5_THEME_PATH."/tail.sub.php");
+		return;
+		break;
 }
-
 ?>
 		<?php if($g5['sidebar']['right']) { ?>
 		</div>
