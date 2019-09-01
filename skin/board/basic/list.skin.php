@@ -115,10 +115,10 @@ $write_pages = chg_paging($write_pages);
 						<span class="d-none d-md-inline-block badge badge-secondary"><?php echo $list[$i]['wr_comment']; ?></span>
 						<?php } ?>
 						<?php
-						if($list[$i]['icon_file']) echo ' <small class="text-muted"><i class="fa fa-download"></i></small>';
-						if($list[$i]['icon_link']) echo ' <small class="text-muted"><i class="fa fa-link"></i></small>';
-						if($list[$i]['icon_new']) echo ' <span class="badge badge-danger">New</span>';
-						if($list[$i]['icon_hot']) echo ' <span class="badge badge-danger">Hot</span>';
+						if($list[$i]['icon_file']) echo ' <small class="text-muted"><i class="fas fa-download"></i></small>';
+						if($list[$i]['icon_link']) echo ' <small class="text-muted"><i class="fas fa-link"></i></small>';
+						if($list[$i]['icon_new']) echo ' <span class="badge badge-danger"><i class="fas fa-bell"></i></span>';
+						if($list[$i]['icon_hot']) echo ' <span class="badge badge-danger"><i class="fas fa-fire-alt"></i></span>';
 						?>
 					</div>
 					<!-- 모바일 -->

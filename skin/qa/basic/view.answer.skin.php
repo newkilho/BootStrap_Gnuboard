@@ -20,9 +20,9 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 		<div class="d-flex justify-content-end mt-4">
 			<div class="btn-group xs-100">
 				<?php if ($answer_update_href) { ?>
-				<a href="<?php echo $answer_update_href ?>" class="btn btn-danger" title="답변수정"><i class="fas fa-pen-square"></i> 답변수정</a><?php } ?>
+				<a href="<?php echo $answer_update_href ?>" class="btn btn-danger" title="답변수정"><i class="fas fa-pen-square"></i> 수정</a><?php } ?>
 				<?php if ($answer_delete_href) { ?>
-				<a href="<?php echo $answer_delete_href ?>" class="btn btn-danger" onclick="del(this.href); return false;" title="답변삭제"><i class="fas fa-trash"></i> 답변삭제</a><?php } ?>
+				<a href="<?php echo $answer_delete_href ?>" class="btn btn-danger" onclick="del(this.href); return false;" title="답변삭제"><i class="fas fa-trash"></i> 삭제</a><?php } ?>
 			</div>
 		</div>
 		<?php } ?>

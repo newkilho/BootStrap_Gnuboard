@@ -55,7 +55,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 			</div>
 		</div>
 
-		<div class="d-flex mt-4 justify-content-end">
+		<div class="d-flex justify-content-end">
 			<button type="submit" id="btn_submit" class="btn btn-primary">답변등록</button>
 		</div>
 

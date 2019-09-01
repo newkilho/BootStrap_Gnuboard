@@ -46,7 +46,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$connect_skin_url.'/custom.css">'
 			</tr>
 			<?php
 			}
-			if ($i == 0) echo '<tr colspan="3">현재 접속자가 없습니다.</tr>';
+			if ($i == 0) echo '<tr><td colspan="3"><span class="text-danger">현재 접속자가 없습니다.</span></td></tr>';
 			?>
 		</tbody>
 	</table>
