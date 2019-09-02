@@ -40,23 +40,23 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 
 	<div>
 		<?php
-			// 파일 출력
-			$v_img_count = count($view['file']);
-			if($v_img_count)
+		// 파일 출력
+		$v_img_count = count($view['file']);
+		if($v_img_count)
+		{
+			echo "<div id=\"bo_v_img\">\n";
+
+			for ($i=0; $i<=count($view['file']); $i++)
 			{
-				echo "<div id=\"bo_v_img\">\n";
-
-				for ($i=0; $i<=count($view['file']); $i++)
+				if ($view['file'][$i]['view'])
 				{
-					if ($view['file'][$i]['view'])
-					{
-						echo $view['file'][$i]['view'];
-						//echo get_view_thumbnail($view['file'][$i]['view']);
-					}
+					echo $view['file'][$i]['view'];
+					//echo get_view_thumbnail($view['file'][$i]['view']);
 				}
-
-				echo "</div>\n";
 			}
+
+			echo "</div>\n";
+		}
 		?>
 	</div>
 
@@ -166,16 +166,10 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 	</div>
 
 	<?php if ($prev_href || $next_href) { ?>
-	<div>
 	<ul class="list-group mb-4">
-		<?php if ($prev_href) { ?><li class="list-group-item"><small class="text-muted"><i class="fa fa-caret-up"></i> 이전글</small> <a href="<?php echo $prev_href ?>" class="text-dark"><?php echo $prev_wr_subject;?></a> <small class="float-right text-muted"><?php echo str_replace('-', '.', substr($prev_wr_date, '2', '8')); ?></small></li><?php } ?>
-		<?php if ($next_href) { ?><li class="list-group-item"><small class="text-muted"><i class="fa fa-caret-down"></i> 다음글</small> <a href="<?php echo $next_href ?>" class="text-dark"><?php echo $next_wr_subject;?></a> <small class="float-right text-muted"><?php echo str_replace('-', '.', substr($next_wr_date, '2', '8')); ?></small></li><?php } ?>
+		<?php if ($prev_href) { ?><li class="list-group-item"><small class="text-muted"><i class="fa fa-caret-up"></i><span class="d-none d-md-inline"> 이전글</span></small> <a href="<?php echo $prev_href ?>" class="text-dark"><?php echo $prev_wr_subject;?></a> <small class="float-right text-muted d-none d-md-inline"><?php echo str_replace('-', '.', substr($prev_wr_date, '2', '8')); ?></small></li><?php } ?>
+		<?php if ($next_href) { ?><li class="list-group-item"><small class="text-muted"><i class="fa fa-caret-down"></i><span class="d-none d-md-inline"> 다음글</span></small> <a href="<?php echo $next_href ?>" class="text-dark"><?php echo $next_wr_subject;?></a> <small class="float-right text-muted d-none d-md-inline"><?php echo str_replace('-', '.', substr($next_wr_date, '2', '8')); ?></small></li><?php } ?>
 	</ul>
-	</div>
-	<?php } ?>
-
-	<?php if($g5['ads']) { ?>
-	<div class="mb-4"><?php echo $g5['ads'] ?></div>
 	<?php } ?>
 
 	<?php
