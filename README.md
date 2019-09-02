@@ -17,4 +17,5 @@
 - Bootstrap 4.3.1  
 - jQuery 3.4.1  
 - Font-Awesome 5.10.2  
+
 (* CDN 을 통해 사용중이며, 다운로드 후 서버에 업로드시 head.def.php 에서 경로를 수정하시면 됩니다.)  
