@@ -33,11 +33,14 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 		<div class="media">
 			<img class="comm-icon rounded" src="<?php echo $mb_info['img'] ?>">
 			<div class="media-body ml-2 ml-lg-3">
-				<div>
+				<div class="row container">
 					<div class="dropdown">
 						<a href="#" class="text-dark font-weight-bold" data-toggle="dropdown"><?php echo get_text($list[$i]['wr_name']); ?></a>
 						<?php echo $mb_info['menu'] ?>
 					</div>
+					<ul class="list-inline pl-1">
+						<?php include(G5_THEME_PATH.'/skin/sns/view_comment_list.sns.skin.php'); ?>
+					</ul>
 				</div>
 	            <div class="mb-2">
 	                <?php if (strstr($list[$i]['wr_option'], "secret")) { ?><img src="<?php echo $board_skin_url; ?>/img/icon_secret.gif" alt="비밀글"><?php } ?>
@@ -45,6 +48,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 		        </div>
 				<ul class="list-inline small text-muted mb-2">
 					<li class="list-inline-item"><i class="far fa-clock"></i> <?php echo $list[$i]['datetime']; ?></li>
+
 					<?php if ($list[$i]['is_reply']) { ?><li class="list-inline-item"><i class="far fa-comment-dots"></i> <a href="<?php echo $c_reply_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;" class="text-muted">댓글</a></li><?php } ?>
 					<?php if ($list[$i]['is_edit']) { ?><li class="list-inline-item"><i class="fas fa-pen-square"></i> <a href="<?php echo $c_edit_href;  ?>" onclick="comment_box('<?php echo $comment_id ?>', 'cu'); return false;" class="text-muted">수정</a></li><?php } ?>
 					<?php if ($list[$i]['is_del'])  { ?><li class="list-inline-item"><i class="fas fa-trash"></i> <a href="<?php echo $list[$i]['del_link'];  ?>" onclick="return comment_delete();" class="text-muted">삭제</a></li><?php } ?>
@@ -96,16 +100,14 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 				</div>
 			</div>
 
+			<?php if ($is_guest) { ?>
 			<div class="input-group mb-2">
-				<?php if ($is_guest) { ?>
 				<input type="text" name="wr_name" value="<?php echo get_cookie("ck_sns_name"); ?>" id="wr_name" required class="form-control" placeholder="이름">
 				<input type="password" name="wr_password" id="wr_password" required class="form-control" placeholder="비밀번호">
-				<?php }	?>
 			</div>
+			<?php }	?>
 
-			<?php
-				if($board['bo_use_sns'] && ($config['cf_facebook_appid'] || $config['cf_twitter_key'])) {
-			?>
+			<?php if($board['bo_use_sns'] && ($config['cf_facebook_appid'] || $config['cf_twitter_key'])) { ?>
 			<div class="mb-2">
 				<span id="bo_vc_send_sns"></span>
 			</div>
@@ -287,7 +289,7 @@ comment_box('', 'c'); // 댓글 입력폼이 보이도록 처리하기위해서 
 $(function() {
     // sns 등록
     $("#bo_vc_send_sns").load(
-        "<?php echo G5_SNS_URL; ?>/view_comment_write.sns.skin.php?bo_table=<?php echo $bo_table; ?>",
+        "<?php echo G5_THEME_URL; ?>/skin/sns/view_comment_write.sns.skin.php?bo_table=<?php echo $bo_table; ?>",
         function() {
             save_html = document.getElementById('bo_vc_w').innerHTML;
         }

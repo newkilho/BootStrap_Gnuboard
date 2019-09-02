@@ -72,35 +72,16 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 		<?php if ($is_signature) { ?><p><?php echo $signature ?></p><?php } ?>
 	</div>
 
-	<div class="mb-2">
-		<!--  추천 비추천 -->
-		<?php if ( $good_href || $nogood_href) { ?>
-		<div id="bo_v_act">
-			<?php if ($good_href) { ?>
-			<span class="bo_v_act_gng">
-				<a href="<?php echo $good_href.'&amp;'.$qstr ?>" id="good_button" class="bo_v_good"><span class="sound_only">추천</span><strong><?php echo number_format($view['wr_good']) ?></strong></a>
-				<b id="bo_v_act_good"></b>
-			</span>
-			<?php } ?>
-			<?php if ($nogood_href) { ?>
-			<span class="bo_v_act_gng">
-				<a href="<?php echo $nogood_href.'&amp;'.$qstr ?>" id="nogood_button" class="bo_v_nogood"><span class="sound_only">비추천</span><strong><?php echo number_format($view['wr_nogood']) ?></strong></a>
-				<b id="bo_v_act_nogood"></b>
-			</span>
-			<?php } ?>
-		</div>
-		<?php } else {
-			if($board['bo_use_good'] || $board['bo_use_nogood']) {
-		?>
-		<div id="bo_v_act">
-			<?php if($board['bo_use_good']) { ?><span class="bo_v_good"><span class="sound_only">추천</span><strong><?php echo number_format($view['wr_good']) ?></strong></span><?php } ?>
-			<?php if($board['bo_use_nogood']) { ?><span class="bo_v_nogood"><span class="sound_only">비추천</span><strong><?php echo number_format($view['wr_nogood']) ?></strong></span><?php } ?>
-		</div>
-		<?php
-			}
-		}
-		?>
+	<?php if($board['bo_use_good'] || $board['bo_use_nogood']) { ?>
+	<div class="mb-2 pt-5 text-center">
+		<?php if($board['bo_use_good']) { ?>
+		<a href="<?php echo $good_href?>" id="good_button" class="btn btn-outline-primary <?php if(!$good_href) echo 'disabled'; ?>"><i class="far fa-thumbs-up"></i> <span class="badge badge-light"><?php echo number_format($view['wr_good']) ?></span></a>
+		<?php } ?>
+		<?php if($board['bo_use_nogood']) { ?>
+		<a href="<?php echo $nogood_href?>" id="nogood_button" class="btn btn-outline-danger <?php if(!$nogood_href) echo 'disabled'; ?>"><i class="far fa-thumbs-down"></i> <span class="badge badge-light"><?php echo number_format($view['wr_nogood']) ?></span></a>
+		<?php } ?>
 	</div>
+	<?php } ?>
 
 	<div class="row align-items-center justify-content-center mb-4">
 		<!-- 공유 -->
@@ -281,7 +262,7 @@ function excute_good(href, $el, $tx)
             }
 
             if(data.count) {
-                $el.find("strong").text(number_format(String(data.count)));
+                $el.find("span").text(number_format(String(data.count)));
                 if($tx.attr("id").search("nogood") > -1) {
                     $tx.text("이 글을 비추천하셨습니다.");
                     $tx.fadeIn(200).delay(2500).fadeOut(200);
@@ -294,4 +275,3 @@ function excute_good(href, $el, $tx)
     );
 }
 </script>
-<!-- } 게시글 읽기 끝 -->

@@ -33,11 +33,14 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 		<div class="media">
 			<img class="comm-icon rounded" src="<?php echo $mb_info['img'] ?>">
 			<div class="media-body ml-2 ml-lg-3">
-				<div>
+				<div class="row container">
 					<div class="dropdown">
 						<a href="#" class="text-dark font-weight-bold" data-toggle="dropdown"><?php echo get_text($list[$i]['wr_name']); ?></a>
 						<?php echo $mb_info['menu'] ?>
 					</div>
+					<ul class="list-inline pl-1">
+						<?php include(G5_THEME_PATH.'/skin/sns/view_comment_list.sns.skin.php'); ?>
+					</ul>
 				</div>
 	            <div class="mb-2">
 	                <?php if (strstr($list[$i]['wr_option'], "secret")) { ?><img src="<?php echo $board_skin_url; ?>/img/icon_secret.gif" alt="비밀글"><?php } ?>
@@ -287,7 +290,7 @@ comment_box('', 'c'); // 댓글 입력폼이 보이도록 처리하기위해서 
 $(function() {
     // sns 등록
     $("#bo_vc_send_sns").load(
-        "<?php echo G5_SNS_URL; ?>/view_comment_write.sns.skin.php?bo_table=<?php echo $bo_table; ?>",
+		"<?php echo G5_THEME_URL; ?>/skin/sns/view_comment_write.sns.skin.php?bo_table=<?php echo $bo_table; ?>",
         function() {
             save_html = document.getElementById('bo_vc_w').innerHTML;
         }
