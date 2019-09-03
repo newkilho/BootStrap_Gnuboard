@@ -170,7 +170,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 		<div class="col-sm-10">
 			<div class="input-group">
 				<div class="custom-file">
-					<input type="file" class="custom-file-input" name="bf_file[]" id="bf_file_<?php echo $i+1 ?>" title="<?php echo $upload_max_filesize ?> 이하만 업로드 가능" data-default="<?php echo $file[$i]['source']; ?>">
+					<input type="file" class="custom-file-input" name="bf_file[]" id="bf_file_<?php echo $i+1 ?>" title="<?php echo $upload_max_filesize ?> 이하만 업로드 가능" data-default="<?php echo ($w == 'u') ? $file[$i]['source'] : ''; ?>">
 					<label class="custom-file-label" for="bf_file_<?php echo $i+1 ?>"><?php if($w == 'u' && $file[$i]['file']) echo $file[$i]['source']; else echo '파일을 선택해주세요.'; ?></label>
 				</div>
 

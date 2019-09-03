@@ -37,6 +37,8 @@ header("Cache-Control: no-cache"); // HTTP/1.1
 header("Expires: 0"); // rfc2616 - Section 14.21
 header("Pragma: no-cache"); // HTTP/1.0
 */
+
+include_once(G5_THEME_PATH.'/functions.php');
 ?>
 <!doctype html>
 <html lang="ko">

@@ -181,4 +181,53 @@ function chg_board_list($str_board_list)
 
 	return $str_board_list;
 }
+
+// 그누보드 5.4 미만을 위한
+if(!function_exists('run_event')) {	function run_event() { } }
+if(!function_exists('get_pretty_url')) {
+	function get_pretty_url($folder, $no='', $query_string='', $action='')
+	{
+	    global $g5, $config;
+
+		$boards = array();
+
+		if( ! $boards ){
+			$sql = " select bo_table from {$g5['board_table']} ";
+			$result = sql_query($sql);
+
+			while ($row = sql_fetch_array($result)) {
+				$boards[] = $row['bo_table'];
+			}
+		}
+
+		$segments = array();
+		$url = $add_query = '';
+
+		if(in_array($folder, $boards)) {
+			$url = G5_BBS_URL. '/board.php?bo_table='. $folder;
+			if($no) {
+				$url .= '&amp;wr_id='. $no;
+			}
+			if($query_string) {
+                if(substr($query_string, 0, 1) !== '&') {
+                    $url .= '&amp;';
+                }
+
+				$url .= $query_string;
+			}
+		} else {
+			$url = G5_BBS_URL. '/'.$folder.'.php';
+            if($no) {
+				$url .= ($folder === 'content') ? '?co_id='. $no : '?'. $no;
+			}
+            if($query_string) {
+                $url .= ($no ? '?' : '&amp;'). $query_string;
+			}
+		}
+
+        $segments[0] = $url;
+
+		return implode('/', $segments).$add_query;
+	}
+}
 ?>
