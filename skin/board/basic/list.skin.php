@@ -129,6 +129,8 @@ $write_pages = chg_paging($write_pages);
 						</li>
 						<li class="list-inline-item"><i class="far fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?></li>
 						<li class="list-inline-item"><i class="far fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?></li>
+						<?php if($list[$i]['wr_good']>0) { ?><li class="list-inline-item text-primary"><i class="far fa-thumbs-up"></i> <?php echo $list[$i]['wr_good'] ?></li><?php } ?>
+						<?php if($list[$i]['wr_nogood']>0) { ?><li class="list-inline-item text-secondary"><i class="far fa-thumbs-down"></i> <?php echo $list[$i]['wr_nogood'] ?></li><?php } ?>
 						<li class="list-inline-item float-right"><i class="far fa-clock"></i> <?php echo $list[$i]['datetime2'] ?></li>
 					</ul>
 				</td>

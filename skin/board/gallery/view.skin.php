@@ -38,27 +38,25 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 		</div>
 	</div>
 
-	<div>
-		<?php
-		// 파일 출력
-		$v_img_count = count($view['file']);
-		if($v_img_count)
+	<?php
+	// 파일 출력
+	$v_img_count = count($view['file']);
+	if($v_img_count)
+	{
+		echo "<div id=\"bo_v_img\">\n";
+
+		for ($i=0; $i<=count($view['file']); $i++)
 		{
-			echo "<div id=\"bo_v_img\">\n";
-
-			for ($i=0; $i<=count($view['file']); $i++)
+			if ($view['file'][$i]['view'])
 			{
-				if ($view['file'][$i]['view'])
-				{
-					echo $view['file'][$i]['view'];
-					//echo get_view_thumbnail($view['file'][$i]['view']);
-				}
+				echo $view['file'][$i]['view'];
+				//echo get_view_thumbnail($view['file'][$i]['view']);
 			}
-
-			echo "</div>\n";
 		}
-		?>
-	</div>
+
+		echo "</div>\n";
+	}
+	?>
 
 	<div id="bo_v_con" class="mb-2">
 		<!-- 본문 내용 -->
@@ -78,7 +76,7 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 		<a href="<?php echo $good_href?>" id="good_button" class="btn btn-outline-primary <?php if(!$good_href) echo 'disabled'; ?>"><i class="far fa-thumbs-up"></i> <span class="badge badge-light"><?php echo number_format($view['wr_good']) ?></span></a>
 		<?php } ?>
 		<?php if($board['bo_use_nogood']) { ?>
-		<a href="<?php echo $nogood_href?>" id="nogood_button" class="btn btn-outline-danger <?php if(!$nogood_href) echo 'disabled'; ?>"><i class="far fa-thumbs-down"></i> <span class="badge badge-light"><?php echo number_format($view['wr_nogood']) ?></span></a>
+		<a href="<?php echo $nogood_href?>" id="nogood_button" class="btn btn-outline-secondary <?php if(!$nogood_href) echo 'disabled'; ?>"><i class="far fa-thumbs-down"></i> <span class="badge badge-light"><?php echo number_format($view['wr_nogood']) ?></span></a>
 		<?php } ?>
 	</div>
 	<?php } ?>
