@@ -107,13 +107,11 @@ function get_member_info($mb_id, $name='', $email='', $homepage='')
 		*/
 	} else {
 		if(!$bo_table)
-		//  return $name;
 		  return array('ico'=>$mb_ico_url, 'img'=>$mb_img_url, 'menu'=>'');
 
 		$menu .= '<a href="'.G5_BBS_URL.'/board.php?bo_table='.$bo_table.'&amp;sca='.$sca.'&amp;sfl=wr_name,1&amp;stx='.$name.'" title="'.$name.' 이름으로 검색" class="dropdown-item" rel="nofollow" onclick="return false;">'.$name.'</a>';
 	}
 
-	//$menu = '<div class="dropdown"><a href="#" data-toggle="dropdown"><a href="#" data-toggle="dropdown">test</a>';
 	$menu = '<div class="dropdown-menu">';
 
     if($mb_id)
