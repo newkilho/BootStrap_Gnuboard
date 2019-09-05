@@ -5,8 +5,11 @@ function get_active_menu($menu_datas)
 
 	foreach($menu_datas as $item)
 	{
-		$item['path'] = parse_url($item['me_link'])['path'].'/';
-		$self['path'] = parse_url($_SERVER['REQUEST_URI'])['path'].'/';
+		$part = parse_url($item['me_link']);
+		$item['path'] = $part['path'].'/';
+
+		$part = parse_url($_SERVER['REQUEST_URI']);
+		$self['path'] = $part.['path'].'/';
 
 		if($item['me_code'] == $g5['me_code'] || 
 			(!$g5['me_code'] && !in_array($item['path'], array('', '/')) && strncmp($item['path'], $self['path'], strlen($item['path']))===0))
