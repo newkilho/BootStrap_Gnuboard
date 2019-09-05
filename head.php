@@ -54,7 +54,7 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 	<a class="navbar-brand" href="<?=G5_URL?>">
-		<img height="48" src="<?php echo G5_URL ?>/logo.png">
+		<img height="48" src="<?php echo G5_IMG_URL ?>/logo.png">
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#TopNavbar" aria-controls="TopNavbar" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>

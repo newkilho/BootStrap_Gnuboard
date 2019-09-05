@@ -32,7 +32,7 @@ switch(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)))
 		<div class="row py-4">
 			<div class="col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
 				<a href="<?php echo G5_URL ?>" class="logo pr-0 pr-lg-3">
-					<img src="<?php echo G5_URL ?>/logo.png" height="33">
+					<img src="<?php echo G5_IMG_URL ?>/logo.png" height="33">
 				</a>
 			</div>
 			<div class="col-lg-5 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
