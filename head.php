@@ -53,25 +53,27 @@ get_active_menu($menu_datas);
 $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.php') ? true : false;
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-	<a class="navbar-brand" href="<?=G5_URL?>">
-		<img height="48" src="<?php echo G5_IMG_URL ?>/logo.png">
-	</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#TopNavbar" aria-controls="TopNavbar" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
+	<div class="container">
+		<a class="navbar-brand" href="<?=G5_URL?>">
+			<img height="48" src="<?php echo G5_IMG_URL ?>/logo.png">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#TopNavbar" aria-controls="TopNavbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-	<div class="collapse navbar-collapse" id="TopNavbar">
-		<ul class="navbar-nav mr-auto">
-			<?php echo get_layout_menu($menu_datas) ?>
-			<?php echo outlogin('theme/basic') ?>
-		</ul>
-		<form class="form-inline my-2 my-lg-0 d-none d-lg-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
-			<input type="hidden" name="sfl" value="wr_subject||wr_content">
-			<input type="hidden" name="sop" value="and">
+		<div class="collapse navbar-collapse" id="TopNavbar">
+			<ul class="navbar-nav mr-auto">
+				<?php echo get_layout_menu($menu_datas) ?>
+				<?php echo outlogin('theme/basic') ?>
+			</ul>
+			<form class="form-inline my-2 my-lg-0 d-none d-lg-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
+				<input type="hidden" name="sfl" value="wr_subject||wr_content">
+				<input type="hidden" name="sop" value="and">
 
-			<input class="form-control mr-sm-2" name="stx" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-		</form>
+				<input class="form-control mr-sm-2" name="stx" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
 	</div>
 </nav>
 
@@ -81,3 +83,13 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 		<div class="row">
 			<div class="col-lg-9">
 	<?php } ?>
+
+	<!--
+	<ul class="list-group list-group-horizontal-sm mb-4">
+		<li class="list-group-item"><a href="/?theme=default">기본테마</a></li>
+		<li class="list-group-item"><a href="/?theme=cerulean">cerulean</a></li>
+		<li class="list-group-item"><a href="/?theme=default">기본</a></li>
+		<li class="list-group-item"><a href="/?theme=default">기본</a></li>
+		<li class="list-group-item"><a href="/?theme=default">기본</a></li>
+	</ul>
+	-->
