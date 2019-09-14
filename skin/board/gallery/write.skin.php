@@ -211,7 +211,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 	</div>
 	<?php } ?>
 
-	<div class="d-flex mt-4 justify-content-center">
+	<div class="d-flex my-4 justify-content-center">
 		<div>
 			<input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn btn-primary p-2">
 			<a href="<?php echo get_pretty_url($bo_table); ?>" class="btn btn-secondary p-2">취소</a>

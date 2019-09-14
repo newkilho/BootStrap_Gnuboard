@@ -52,7 +52,7 @@ get_active_menu($menu_datas);
 
 $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.php') ? true : false;
 ?>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<div class="container">
 		<a class="navbar-brand" href="<?=G5_URL?>">
 			<img height="48" src="<?php echo G5_IMG_URL ?>/logo.png">
@@ -77,7 +77,7 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 	</div>
 </nav>
 
-<main role="main" class="container mt-4">
+<main role="main" class="container">
 
 	<?php if($g5['sidebar']['right']) { ?>
 		<div class="row">

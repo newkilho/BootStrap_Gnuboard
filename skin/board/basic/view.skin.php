@@ -166,7 +166,7 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 	<?php
 	// 코멘트 입출력
 	include_once(G5_BBS_PATH.'/view_comment.php');
-	 ?>
+	?>
 
 </div>
 
