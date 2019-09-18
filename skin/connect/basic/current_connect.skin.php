@@ -10,7 +10,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$connect_skin_url.'/custom.css">'
 
 	<blockquote><h3>현재접속자</h3></blockquote>
 
-	<table class="table xs-full mb-0"> <!-- table-striped table-hover  -->
+	<table class="table xs-full mb-4"> <!-- table-striped table-hover  -->
 		<thead>
 			<tr class="d-none d-md-table-row">
 				<th class="d-none d-md-table-cell" style="width: 4em;">번호</th>

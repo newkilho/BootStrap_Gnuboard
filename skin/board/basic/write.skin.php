@@ -89,7 +89,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">이메일</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" name="wr_email" value="<?php echo $email ?>" id="wr_email" placeholder="이메일">
+			<input class="form-control" type="email" name="wr_email" value="<?php echo $email ?>" id="wr_email" placeholder="이메일">
 		</div>
 	</div>
 	<?php } ?>
@@ -98,7 +98,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">홈페이지</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" name="wr_homepage" value="<?php echo $homepage ?>" id="wr_homepage" size="50" placeholder="홈페이지">
+			<input class="form-control" type="url" name="wr_homepage" value="<?php echo $homepage ?>" id="wr_homepage" size="50" placeholder="홈페이지">
 		</div>
 	</div>
 	<?php } ?>
@@ -155,17 +155,17 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 
 	<?php for ($i=1; $is_link && $i<=G5_LINK_COUNT; $i++) { ?>
 	<div class="form-group row">
-		<label class="col-sm-2 col-form-label"><!--<i class="fa fa-link"></i> -->링크<?php echo $i?></label>
+		<label class="col-sm-2 col-form-label">링크<?php echo $i?></label>
 
 		<div class="col-sm-10">
-			<input class="form-control" type="text" name="wr_link<?php echo $i ?>" value="<?php if($w=="u"){echo$write['wr_link'.$i];} ?>" id="wr_link<?php echo $i ?>" size="50">
+			<input class="form-control" type="url" name="wr_link<?php echo $i ?>" value="<?php if($w=="u"){echo$write['wr_link'.$i];} ?>" id="wr_link<?php echo $i ?>" placeholder="링크주소를 입력해주세요.">
 		</div>
 	</div>
 	<?php } ?>
 
 	<?php for ($i=0; $is_file && $i<$file_count; $i++) { ?>
 	<div class="form-group row">
-		<label class="col-sm-2 col-form-label"><!--<i class="fa fa-download"></i> -->파일<?php echo $i+1 ?></label>
+		<label class="col-sm-2 col-form-label">파일<?php echo $i+1 ?></label>
 
 		<div class="col-sm-10">
 			<div class="input-group">
@@ -199,10 +199,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 	</div>
 	<?php } ?>
 
-	<div class="d-flex my-4 justify-content-center">
-		<div>
-			<input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn btn-primary p-2">
-			<a href="<?php echo get_pretty_url($bo_table); ?>" class="btn btn-secondary p-2">취소</a>
+	<div class="d-flex justify-content-end mb-4">
+		<div class="btn-group xs-100">
+			<input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn btn-primary">
+			<a href="<?php echo get_pretty_url($bo_table); ?>" class="btn btn-outline-primary">취소</a>
 		</div>
 	</div>
 
