@@ -33,6 +33,7 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 /* 커스텀 */
 .anchor { position: relative } 
 .anchor a { position: absolute; top: -60px }
+.pagination { margin-bottom: 0.75rem; }
 
 .corner-card{ overflow: hidden; position: relative; }
 .corner-ribbon{ width: 200px; background: #f43; position: absolute; top: 25px; left: -50px; text-align: center; line-height: 1.6em; letter-spacing: 1px; color: #f0f0f0; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
