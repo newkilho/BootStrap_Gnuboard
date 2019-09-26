@@ -14,7 +14,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/custom.css">')
 <form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post">
 
 	<div class="text-center mb-5">
-		<a href="<?php echo G5_URL ?>"><img src="<?php echo G5_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>" class="logo"></a>
+		<a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>" class="logo"></a>
 	</div>
 
 	<?php
