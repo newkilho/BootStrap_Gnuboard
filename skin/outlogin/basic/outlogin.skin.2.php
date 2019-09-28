@@ -10,11 +10,11 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 		<a class="dropdown-item" href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">정보수정</a>
 		<a class="dropdown-item" href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a>
 
-		<? if ($is_admin == 'super' || $is_auth) {  ?>
+		<?php if ($is_admin == 'super' || $is_auth) {  ?>
 		<div class="dropdown-divider"></div>
 		<a class="dropdown-item" href="<?php echo G5_ADMIN_URL ?>"><strong>관리자 모드</strong></a>
 		</li>
-		<? }  ?>
+		<?php }  ?>
 
 	</div>
 </li>

@@ -21,7 +21,7 @@ add_stylesheet('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jqclou
 	}
 ?>
 
-<? if(!empty($words)){ ?>
+<?php if(!empty($words)){ ?>
 <div class="card">
 	<div class="card-header">
 		인기검색어
