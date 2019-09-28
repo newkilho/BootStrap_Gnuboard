@@ -28,6 +28,7 @@ function get_layout_menu($menu_datas)
 {
 	global $g5;
 
+	$output = '';
 	foreach($menu_datas as $item)
 	{
 		$item['act'] = $item['me_code'] == substr($g5['me_code'], 0, strlen($item['me_code'])) ? 'active' : '';
@@ -61,6 +62,7 @@ function get_layout_breadcrumb($menu_datas, $recursive=false)
 {
 	global $g5;
 
+	$output = '';
 	foreach($menu_datas as $item)
 	{
 		if($item['me_code'] == substr($g5['me_code'], 0, strlen($item['me_code'])))
