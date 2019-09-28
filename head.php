@@ -1,4 +1,4 @@
-<?
+<?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 switch(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)))
@@ -54,8 +54,8 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 ?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<div class="container">
-		<a class="navbar-brand" href="<?=G5_URL?>">
-			<img height="48" src="<?php echo G5_IMG_URL ?>/logo.png">
+		<a class="navbar-brand" href="<?php echo G5_URL; ?>">
+			<img height="48" src="<?php echo G5_IMG_URL; ?>/logo.png">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#TopNavbar" aria-controls="TopNavbar" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>

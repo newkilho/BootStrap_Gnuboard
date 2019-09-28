@@ -23,7 +23,7 @@ switch(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)))
 		<div class="col-lg-3 mt-lg-0">
 			<?php @include G5_PATH.'/sidebar.right.php'; ?>
 		</div>
-		<? } ?>
+		<?php } ?>
 
 </main>
 

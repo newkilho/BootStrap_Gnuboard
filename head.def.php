@@ -59,7 +59,7 @@ header("Pragma: no-cache"); // HTTP/1.0
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 	<!-- GnuBoard5 -->
-	<title><?=$g5['title']?></title>	
+	<title><?php echo $g5['title']; ?></title>	
 	<link rel="stylesheet" href="<?php echo G5_THEME_URL; ?>/css/custom.css">
 
 	<script>
