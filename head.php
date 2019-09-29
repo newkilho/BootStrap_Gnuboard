@@ -83,13 +83,3 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 		<div class="row">
 			<div class="col-lg-9">
 	<?php } ?>
-
-	<!--
-	<ul class="list-group list-group-horizontal-sm mb-4">
-		<li class="list-group-item"><a href="/?theme=default">기본테마</a></li>
-		<li class="list-group-item"><a href="/?theme=cerulean">cerulean</a></li>
-		<li class="list-group-item"><a href="/?theme=default">기본</a></li>
-		<li class="list-group-item"><a href="/?theme=default">기본</a></li>
-		<li class="list-group-item"><a href="/?theme=default">기본</a></li>
-	</ul>
-	-->

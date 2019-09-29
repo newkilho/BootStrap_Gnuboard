@@ -9,7 +9,7 @@ function get_active_menu($menu_datas)
 		$item['path'] = $part['path'].'/';
 
 		$part = parse_url($_SERVER['REQUEST_URI']);
-		$self['path'] = $part.['path'].'/';
+		$self['path'] = $part['path'].'/';
 
 		if($item['me_code'] == $g5['me_code'] || 
 			(!$g5['me_code'] && !in_array($item['path'], array('', '/')) && strncmp($item['path'], $self['path'], strlen($item['path']))===0))
@@ -31,6 +31,7 @@ function get_layout_menu($menu_datas)
 	$output = '';
 	foreach($menu_datas as $item)
 	{
+		//echo $g5['me_code'].' - '.$item['me_code'].'<br />';
 		$item['act'] = $item['me_code'] == substr($g5['me_code'], 0, strlen($item['me_code'])) ? 'active' : '';
 
 		if(!$item['sub'])

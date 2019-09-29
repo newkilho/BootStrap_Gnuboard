@@ -98,7 +98,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 	<div class="form-group row">
 		<label class="col-sm-2 col-form-label">홈페이지</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="url" name="wr_homepage" value="<?php echo $homepage ?>" id="wr_homepage" size="50" placeholder="홈페이지">
+			<input class="form-control" type="url" name="wr_homepage" value="<?php echo $homepage ?>" id="wr_homepage" placeholder="홈페이지">
 		</div>
 	</div>
 	<?php } ?>
@@ -118,7 +118,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 		<div class="col-sm-10">
 			<div id="autosave_wrapper">
 				<div class="input-group">
-					<input class="form-control" type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required size="50" maxlength="255" placeholder="제목">
+					<input class="form-control" type="text" name="wr_subject" value="<?php echo $subject ?>" id="wr_subject" required placeholder="제목">
 					<?php if ($is_member) { // 임시 저장된 글 기능 ?>
 					<script src="<?php echo G5_JS_URL; ?>/autosave.js"></script>
 					<?php if($editor_content_js) echo $editor_content_js; ?>
@@ -175,7 +175,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 
 				</div>
 
 				<?php if ($is_file_content) { ?>
-				<input class="form-control" type="text" name="bf_content[]" value="<?php echo ($w == 'u') ? $file[$i]['bf_content'] : ''; ?>" title="파일 설명을 입력해주세요." class="full_input frm_input" size="50" placeholder="파일 설명을 입력해주세요.">
+				<input class="form-control" type="text" name="bf_content[]" value="<?php echo ($w == 'u') ? $file[$i]['bf_content'] : ''; ?>" title="파일 설명을 입력해주세요." class="full_input frm_input" placeholder="파일 설명을 입력해주세요.">
 				<?php } ?>
 			</div>
 
