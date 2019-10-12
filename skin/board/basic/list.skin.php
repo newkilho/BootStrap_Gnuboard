@@ -125,7 +125,10 @@ $write_pages = chg_paging($write_pages);
 					<ul class="list-inline small text-muted mt-1 mb-0 d-md-none">
 						<li class="list-inline-item">
 							<img class="list-icon rounded" src="<?php echo $mb_info['img'] ?>">
-							<?php echo get_text($list[$i]['wr_name']); ?>
+							<div class="dropdown d-inline">
+								<a href="#" data-toggle="dropdown" class="text-dark"><?php echo get_text($list[$i]['wr_name']); ?></a>
+								<?php echo $mb_info['menu'] ?>
+							</div>
 						</li>
 						<li class="list-inline-item"><i class="far fa-eye"></i> <?php echo number_format($list[$i]['wr_hit']) ?></li>
 						<li class="list-inline-item"><i class="far fa-comment-dots"></i> <?php echo number_format($list[$i]['wr_comment']) ?></li>
