@@ -31,16 +31,15 @@ function get_layout_menu($menu_datas)
 	$output = '';
 	foreach($menu_datas as $item)
 	{
-		//echo $g5['me_code'].' - '.$item['me_code'].'<br />';
 		$item['act'] = $item['me_code'] == substr($g5['me_code'], 0, strlen($item['me_code'])) ? 'active' : '';
 
 		if(!$item['sub'])
 		{
-			$output .= '<li class="nav-item"><a href="'.$item['me_link'].'" class="nav-link '.$item['act'].' '.$item['me_class'].'">'.$item['me_name'].'</a></li>';
+			$output .= '<li class="nav-item"><a href="'.$item['me_link'].'" target="_'.$item['me_target'].'" class="nav-link '.$item['act'].' '.$item['me_class'].'">'.$item['me_name'].'</a></li>';
 		}
 		else
 		{
-			$output .= '<li class="nav-item dropdown"><a href="'.$item['me_link'].'" class="nav-link dropdown-toggle '.$item['act'].'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$item['me_name'].'</a><div class="dropdown-menu">';
+			$output .= '<li class="nav-item dropdown"><a href="'.$item['me_link'].'" target="_'.$item['me_target'].'" class="nav-link dropdown-toggle '.$item['act'].'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$item['me_name'].'</a><div class="dropdown-menu">';
 
 			foreach($item['sub'] as $item2)
 			{
