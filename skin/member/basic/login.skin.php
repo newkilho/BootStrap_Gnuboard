@@ -57,6 +57,9 @@ $(function(){
 
 function flogin_submit(f)
 {
-    return true;
+    if( $( document.body ).triggerHandler( 'login_sumit', [f, 'flogin'] ) !== false ){
+        return true;
+    }
+    return false;
 }
 </script>

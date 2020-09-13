@@ -188,7 +188,10 @@ function chg_board_list($str_board_list)
 }
 
 // 그누보드 5.4 미만을 위한
-if(!function_exists('run_event')) {	function run_event() { } }
+if(!function_exists('run_event')) {	
+	function run_event() { } 
+}
+
 if(!function_exists('get_pretty_url')) {
 	function get_pretty_url($folder, $no='', $query_string='', $action='')
 	{

@@ -13,7 +13,7 @@ $write_pages = chg_paging($write_pages);
 	<?php 
 		if($is_category)
 		{
-			$category_href = G5_BBS_URL.'/board.php?bo_table='.$bo_table;
+			$category_href = get_pretty_url($bo_table);
 	?>
 
 	<ul class="nav nav-tabs border-bottom-0">
@@ -26,7 +26,7 @@ $write_pages = chg_paging($write_pages);
 			{
 		?>
 		<li class="nav-item">
-			<a class="nav-link <?php if($category==$sca) echo 'active'; ?>" href="<?php echo $category_href.'&sca='.urlencode($category); ?>"><?php echo $category ?></a>
+			<a class="nav-link <?php if($category==$sca) echo 'active'; ?>" href="<?php get_pretty_url($bo_table,'','sca='.urlencode($category)); ?>"><?php echo $category ?></a>
 		</li>
 		<?php
 			}

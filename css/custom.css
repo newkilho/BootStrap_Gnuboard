@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 그누보드 */
-.sound_only {display:inline-block !important;position:absolute;top:0;left:0;margin:0 !important;padding:0 !important;font-size:0;line-height:0;border:0 !important;overflow:hidden !important}
+.msg_sound_only, .sound_only {display:inline-block !important;position:absolute;top:0;left:0;margin:0 !important;padding:0 !important;font-size:0;line-height:0;border:0 !important;overflow:hidden !important}
 .btn_admin { display: none; }
 
 /* 캡챠 자동등록(입력)방지 기본 -pc */

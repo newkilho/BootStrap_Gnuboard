@@ -13,7 +13,6 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 		<?php if ($is_admin == 'super' || $is_auth) {  ?>
 		<div class="dropdown-divider"></div>
 		<a class="dropdown-item" href="<?php echo G5_ADMIN_URL ?>"><strong>관리자 모드</strong></a>
-		</li>
 		<?php }  ?>
 
 	</div>

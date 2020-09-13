@@ -22,36 +22,14 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 include_once(G5_THEME_PATH.'/functions.php');
 
-// 메뉴 계산 (/head.php 응용)
-$sql = " select *
-			from {$g5['menu_table']}
-			where me_use = '1'
-			  and length(me_code) = '2'
-			order by me_order, me_id ";
-$result = sql_query($sql, false);
-$gnb_zindex = 999; // gnb_1dli z-index 값 설정용
-$menu_datas = array();
-
-for ($i=0; $row=sql_fetch_array($result); $i++) {
-	$menu_datas[$i] = $row;
-
-	$sql2 = " select *
-				from {$g5['menu_table']}
-				where me_use = '1'
-				  and length(me_code) = '4'
-				  and substring(me_code, 1, 2) = '{$row['me_code']}'
-				order by me_order, me_id ";
-	$result2 = sql_query($sql2);
-	for ($k=0; $row2=sql_fetch_array($result2); $k++) {
-		$menu_datas[$i]['sub'][$k] = $row2;
-	}
-
-}
-
-get_active_menu($menu_datas);
+$menu_data = get_menu_db(0, true);
+get_active_menu($menu_data);
 
 $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.php') ? true : false;
+
+if(defined('_INDEX_')) include G5_THEME_PATH.'/newwin.inc.php';
 ?>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<div class="container">
 		<a class="navbar-brand" href="<?php echo G5_URL; ?>">
@@ -63,7 +41,7 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 
 		<div class="collapse navbar-collapse" id="TopNavbar">
 			<ul class="navbar-nav mr-auto">
-				<?php echo get_layout_menu($menu_datas) ?>
+				<?php echo get_layout_menu($menu_data) ?>
 				<?php echo outlogin('theme/basic') ?>
 			</ul>
 			<form class="form-inline my-2 my-lg-0 d-none d-lg-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
@@ -81,5 +59,5 @@ $g5['sidebar']['right'] = !defined('_INDEX_')&&is_file(G5_PATH.'/sidebar.right.p
 
 	<?php if($g5['sidebar']['right']) { ?>
 		<div class="row">
-			<div class="col-lg-9">
+			<div class="col-lg-9 mb-4">
 	<?php } ?>
