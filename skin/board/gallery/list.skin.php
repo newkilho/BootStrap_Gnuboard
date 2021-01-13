@@ -52,7 +52,7 @@ $write_pages = chg_paging($write_pages);
 			$mb_info = get_member_info($list[$i]['mb_id'], $list[$i]['wr_name'], $list[$i]['wr_email'], $list[$i]['wr_homepage']); 
 			$thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], 320, 240, false, true);
 	?>
-		<div class="col-md-6 col-lg-4 mb-3">
+		<div class="col-md-6 col-lg-4 mb-4">
 			<div class="card">
 				<div class="corner-card">
 					<?php if($list[$i]['icon_new']) { ?>

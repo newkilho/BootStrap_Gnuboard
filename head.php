@@ -55,7 +55,7 @@ if(defined('_INDEX_')) include G5_THEME_PATH.'/newwin.inc.php';
 	</div>
 </nav>
 
-<main role="main" class="container">
+<div class="container">
 
 	<?php if($g5['sidebar']['right']) { ?>
 		<div class="row">

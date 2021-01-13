@@ -17,8 +17,8 @@ for ($i=0; $nw=sql_fetch_array($result); $i++)
 ?>
 
 <!-- The Modal -->
-<div class="modal" id="hd_pops_<?php echo $nw['nw_id'] ?>">
-	<div class="modal-dialog">
+<div class="modal fade" id="hd_pops_<?php echo $nw['nw_id'] ?>">
+	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 
 			<!-- Modal body -->
@@ -29,7 +29,7 @@ for ($i=0; $nw=sql_fetch_array($result); $i++)
 
 			<!-- Modal footer -->
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary hd_pops_reject hd_pops_<?php echo $nw['nw_id']; ?> <?php echo $nw['nw_disable_hours']; ?>" data-dismiss="modal"><strong><?php echo $nw['nw_disable_hours']; ?></strong>시간 동안 다시 열람하지 않습니다.</button>
+				<button type="button" class="btn btn-sm btn-secondary hd_pops_reject hd_pops_<?php echo $nw['nw_id']; ?> <?php echo $nw['nw_disable_hours']; ?>" data-dismiss="modal"><strong><?php echo $nw['nw_disable_hours']; ?></strong>시간 동안 다시 열람하지 않습니다.</button>
 			</div>
 
 		</div>
@@ -47,8 +47,8 @@ for ($i=0; $nw=sql_fetch_array($result); $i++)
 $(function() {
     $(".hd_pops_reject").click(function() {
         var id = $(this).attr('class').split(' ');
-        var ck_name = id[3];
-        var exp_time = parseInt(id[4]);
+        var ck_name = id[4];
+        var exp_time = parseInt(id[5]);
         set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
     });
 });

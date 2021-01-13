@@ -14,8 +14,8 @@
   
 ## 오픈소스  
 해당 테마는 아래의 라이브러리를 사용합니다.  
-- Bootstrap 4.3.1  
-- jQuery 3.4.1  
-- Font-Awesome 5.10.2  
+- Bootstrap 4.5.3
+- jQuery 3.5.1
+- Font-Awesome 5.15.1 
 
 (* CDN 을 통해 사용중이며, 다운로드 후 서버에 업로드시 head.def.php 에서 경로를 수정하시면 됩니다.)  

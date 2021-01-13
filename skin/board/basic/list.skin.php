@@ -99,28 +99,26 @@ $write_pages = chg_paging($write_pages);
 					<?php } ?>
 				</td>
 				<td>
-					<div>
-						<?php if($is_category && $list[$i]['ca_name']) { ?>
-						<a href="<?php echo $list[$i]['ca_name_href'] ?>" class="badge badge-primary"><?php echo $list[$i]['ca_name'] ?></a>
-						<?php } ?>
-						<?php if($list[$i]['wr_reply']) { ?>
-						<span class="d-none d-md-inline">
-							<?php for($j=1; $j<strlen($list[$i]['wr_reply']); $j++) echo '&nbsp;'; ?>
-						</span>
-						<?php } ?>
-						<?php echo $list[$i]['icon_reply'] ?>
-						<?php if(isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']); ?>
-						<a href="<?php echo $list[$i]['href'] ?>" class="text-dark"><?php echo $list[$i]['subject'] ?></a>
-						<?php if($list[$i]['comment_cnt']) { ?> 
-						<span class="d-none d-md-inline-block badge badge-secondary"><?php echo $list[$i]['wr_comment']; ?></span>
-						<?php } ?>
-						<?php
-						if($list[$i]['icon_file']) echo ' <small class="text-muted"><i class="fas fa-download"></i></small>';
-						if($list[$i]['icon_link']) echo ' <small class="text-muted"><i class="fas fa-link"></i></small>';
-						if($list[$i]['icon_new']) echo ' <span class="badge badge-danger"><i class="fas fa-bell"></i></span>';
-						if($list[$i]['icon_hot']) echo ' <span class="badge badge-danger"><i class="fas fa-fire-alt"></i></span>';
-						?>
-					</div>
+					<?php if($is_category && $list[$i]['ca_name']) { ?>
+					<a href="<?php echo $list[$i]['ca_name_href'] ?>" class="badge badge-primary"><?php echo $list[$i]['ca_name'] ?></a>
+					<?php } ?>
+					<?php if($list[$i]['wr_reply']) { ?>
+					<span class="d-none d-md-inline">
+						<?php for($j=1; $j<strlen($list[$i]['wr_reply']); $j++) echo '&nbsp;'; ?>
+					</span>
+					<?php } ?>
+					<?php echo $list[$i]['icon_reply'] ?>
+					<?php if(isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']); ?>
+					<a href="<?php echo $list[$i]['href'] ?>" class="text-dark"><?php echo $list[$i]['subject'] ?></a>
+					<?php if($list[$i]['comment_cnt']) { ?> 
+					<span class="d-none d-md-inline-block badge badge-secondary"><?php echo $list[$i]['wr_comment']; ?></span>
+					<?php } ?>
+					<?php
+					if($list[$i]['icon_file']) echo ' <small class="text-muted"><i class="fas fa-download"></i></small>';
+					if($list[$i]['icon_link']) echo ' <small class="text-muted"><i class="fas fa-link"></i></small>';
+					if($list[$i]['icon_new']) echo ' <span class="badge badge-danger"><i class="fas fa-bell"></i></span>';
+					if($list[$i]['icon_hot']) echo ' <span class="badge badge-danger"><i class="fas fa-fire-alt"></i></span>';
+					?>
 					<!-- 모바일 -->
 					<ul class="list-inline small text-muted mt-1 mb-0 d-md-none">
 						<li class="list-inline-item">

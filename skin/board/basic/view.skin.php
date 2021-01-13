@@ -8,8 +8,6 @@ $mb_info = get_member_info($view['mb_id'], $view['wr_name'], $view['wr_email'], 
 $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($view['wr_datetime'], 11, 8) : substr($view['wr_datetime'], 2, 8);
 ?>
 
-<script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
-
 <div>
 
 	<blockquote><h3><?php echo cut_str(get_text($view['wr_subject']), 70); ?></h3></blockquote>
@@ -38,30 +36,18 @@ $view['datetime'] = substr($view['wr_datetime'],0,10) == G5_TIME_YMD ? substr($v
 		</div>
 	</div>
 
-	<?php
-	// 파일 출력
-	$v_img_count = count($view['file']);
-	if($v_img_count)
-	{
-		echo "<div id=\"bo_v_img\">\n";
-
-		for ($i=0; $i<=count($view['file']); $i++)
-		{
-			if ($view['file'][$i]['view'])
-			{
-				echo $view['file'][$i]['view'];
-				//echo get_view_thumbnail($view['file'][$i]['view']);
-			}
-		}
-
-		echo "</div>\n";
-	}
-	?>
-
 	<div id="bo_v_con" class="mb-2">
-		<!-- 본문 내용 -->
-		<?php echo str_replace('<img src="', '<img class="img-fluid" src="', get_view_thumbnail($view['content'])); ?>
-		<?php //echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>
+
+		<?php
+		// 파일 출력
+		for ($i=0; $i<=count($view['file']); $i++)
+			if ($view['file'][$i]['view'])
+				echo '<img class="img-fluid d-block" src="'.$view['file'][$i]['path'].'/'.$view['file'][$i]['file'].'">';
+
+		// 본문 내용
+		echo str_replace('<img ', '<img class="img-fluid d-block" ', $view['content']);
+		?>
+
 	</div>
 
 	<div class="mb-2">
@@ -201,11 +187,6 @@ function board_move(href)
 
 <script>
 $(function() {
-    $("a.view_image").click(function() {
-        window.open(this.href, "large_image", "location=yes,links=no,toolbar=no,top=10,left=10,width=10,height=10,resizable=yes,scrollbars=no,status=no");
-        return false;
-    });
-
     // 추천, 비추천
     $("#good_button, #nogood_button").click(function() {
         var $tx;
@@ -217,9 +198,6 @@ $(function() {
         excute_good(this.href, $(this), $tx);
         return false;
     });
-
-    // 이미지 리사이즈
-    $("#bo_v_atc").viewimageresize();
 
     //sns공유
     $(".btn_share").click(function(){

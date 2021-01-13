@@ -1,11 +1,6 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-if (G5_IS_MOBILE) {
-    include_once(G5_THEME_MOBILE_PATH.'/tail.php');
-    return;
-}
-
 switch(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)))
 {
 	case '/bbs/register.php':
@@ -17,15 +12,15 @@ switch(substr($_SERVER['SCRIPT_FILENAME'], strlen(G5_PATH)))
 		break;
 }
 ?>
-		<?php if($g5['sidebar']['right']) { ?>
-		</div>
+	<?php if($g5['sidebar']['right']) { ?>
+	</div>
 
-		<div class="col-lg-3">
-			<?php @include G5_PATH.'/sidebar.right.php'; ?>
-		</div>
-		<?php } ?>
+	<div class="col-lg-3">
+		<?php @include G5_PATH.'/sidebar.right.php'; ?>
+	</div>
+	<?php } ?>
 
-</main>
+</div>
 
 <footer id="footer">
 	<div class="container py-2">

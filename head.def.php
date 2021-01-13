@@ -53,16 +53,19 @@ header("Pragma: no-cache"); // HTTP/1.0
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
 	<!-- Vendor CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
- 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
 	<!-- Vendor Script -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
 
 	<!-- GnuBoard5 -->
-	<title><?php echo $g5['title']; ?></title>	
+	<title><?php echo $g5_head_title; ?></title>
+
 	<link rel="stylesheet" href="<?php echo G5_THEME_URL; ?>/css/custom.css">
 
 	<script>
@@ -75,9 +78,17 @@ header("Pragma: no-cache"); // HTTP/1.0
 	var g5_sca       = "<?php echo isset($sca)?$sca:''; ?>";
 	var g5_editor    = "<?php echo ($config['cf_editor'] && $board['bo_use_dhtml_editor'])?$config['cf_editor']:''; ?>";
 	var g5_cookie_domain = "<?php echo G5_COOKIE_DOMAIN ?>";
+	<?php if(defined('G5_IS_ADMIN')) { ?>
+	var g5_admin_url = "<?php echo G5_ADMIN_URL; ?>";
+	<?php } ?>
 	</script>
 
-	<script src="<?php echo G5_JS_URL ?>/common.js?ver=<?php echo G5_JS_VER; ?>"></script>
-	<script src="<?php echo G5_JS_URL ?>/wrest.js?ver=<?php echo G5_JS_VER; ?>"></script>
+	<?php
+	add_javascript('<script src="'.G5_JS_URL.'/common.js?ver='.G5_JS_VER.'"></script>', 0);
+	add_javascript('<script src="'.G5_JS_URL.'/wrest.js?ver='.G5_JS_VER.'"></script>', 0);
+
+	if(!defined('G5_IS_ADMIN'))
+		echo $config['cf_add_script'];
+	?>
 </head>
 <body>
