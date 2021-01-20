@@ -2,6 +2,10 @@
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/custom.css">', 0);
+
+    $token = get_session('ss_write_'.$bo_table.'_token');
+    set_session('ss_write_'.$bo_table.'_token', '');
+//check_write_token($bo_table);
 ?>
 
 <div>

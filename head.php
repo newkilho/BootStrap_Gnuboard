@@ -44,12 +44,12 @@ if(defined('_INDEX_')) include G5_THEME_PATH.'/newwin.inc.php';
 				<?php echo get_layout_menu($menu_data) ?>
 				<?php echo outlogin('theme/basic') ?>
 			</ul>
-			<form class="form-inline my-2 my-lg-0 d-none d-lg-inline" action="<?php echo G5_BBS_URL ?>/search.php" method="get">
+			<form action="<?php echo G5_BBS_URL ?>/search.php" method="get" class="form-inline my-2 my-lg-0 d-none d-lg-inline">
 				<input type="hidden" name="sfl" value="wr_subject||wr_content">
 				<input type="hidden" name="sop" value="and">
 
-				<input class="form-control mr-sm-2" name="stx" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+				<input type="search" name="stx" value="<?=$stx?>" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+				<button type="submit" class="btn btn-secondary my-2 my-sm-0">Search</button>
 			</form>
 		</div>
 	</div>

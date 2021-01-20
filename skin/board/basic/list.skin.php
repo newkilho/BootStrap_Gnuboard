@@ -52,7 +52,7 @@ $write_pages = chg_paging($write_pages);
 	<input type="hidden" name="page" value="<?php echo $page ?>">
 	<input type="hidden" name="sw" value="">
 
-	<table class="table xs-full mb-0"> <!-- table-striped table-hover  -->
+	<table class="table xs-full mb-2"> <!-- table-striped table-hover  -->
 		<thead>
 			<tr class="d-none d-md-table-row">
 				<?php if($is_checkbox) { ?>
@@ -150,16 +150,11 @@ $write_pages = chg_paging($write_pages);
 			<?php } ?>
 			<?php if(count($list) == 0) { echo '<tr><td colspan="'.$colspan.'">게시물이 없습니다.</td></tr>'; } ?>
 		</tbody>
-		<tfoot>
-			<tr>
-				<td colspan="<?php echo $colspan; ?>">
-					<div class="d-flex justify-content-center justify-content-sm-end">
-						<?php echo $write_pages;  ?>
-					</div>
-				</td>
-			</tr>
-		</tfoot>
 	</table>
+
+	<div class="d-flex justify-content-center justify-content-sm-end">
+		<?php echo $write_pages;  ?>
+	</div>
 
 	<div class="d-flex flex-sm-row flex-column justify-content-sm-between mb-4">
 		<div class="d-flex justify-content-center mb-2 mb-sm-0">

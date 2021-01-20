@@ -87,7 +87,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
     <input type="hidden" name="page" value="<?php echo $page ?>">
     <input type="hidden" name="is_good" value="">
 
-	<div class="input-group mb-2">
+	<div class="mb-2">
 		<textarea id="wr_content" name="wr_content" maxlength="10000" required class="form-control required" rows="3" placeholder="댓글내용을 입력해주세요"><?php echo $c_wr_content; ?></textarea>
 	</div>
 
@@ -304,4 +304,10 @@ $(function() {
 });
 
 </script>
-<?php } ?>
+<?php }else{ if($board['bo_comment_level'] == 2) { ?>
+<div id="bo_vc_w" class="mb-4">
+	<div class="input-group mb-2">
+		<textarea id="wr_content" name="wr_content" disabled class="form-control required" rows="3" placeholder="로그인 후 댓글내용을 입력해주세요"></textarea>
+	</div>
+</div>
+<?php }} ?>
